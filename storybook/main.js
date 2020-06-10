@@ -1,7 +1,6 @@
 module.exports = {
   stories: ['../stories/**/*.stories.js'],
   webpackFinal: async (config) => {
-
     // Make whatever fine-grained changes you need
     config.module.rules.push({
       test: /\.(tsx|ts|js|jsx)$/,
@@ -10,7 +9,7 @@ module.exports = {
         loader: 'babel-loader',
         options: { presets: ['@babel/preset-typescript'] }
       }
-    });
+    })
     config.resolve.extensions = [
       '.web.tsx',
       '.web.ts',
@@ -26,7 +25,6 @@ module.exports = {
     }
 
     // Return the altered config
-    return config;
-  },
-};
-
+    return config
+  }
+}
