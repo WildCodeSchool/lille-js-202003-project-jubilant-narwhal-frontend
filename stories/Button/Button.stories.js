@@ -1,8 +1,8 @@
-import React from "react";
-import CustomButton from "../../src/component/Button/Button";
+import React from 'react'
+import CustomButton from '../../src/component/Button/Button'
 
 export default {
-  title: "Button",
-};
+  title: 'Button'
+}
 
-export const button = () => <CustomButton />;
+export const button = () => <CustomButton />
