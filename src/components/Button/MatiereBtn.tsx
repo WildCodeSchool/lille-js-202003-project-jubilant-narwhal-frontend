@@ -1,11 +1,12 @@
 import styled from 'rn-css'
 
-const MatiereBtn = styled.Button`
-  background: yellowgreen;
+const MatiereBtn = styled.TouchableOpacity`
+  background: red;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 10px;
+  width: 100px;
+  height: 50px;
+  border: 2px solid black;
+  pressduration: 0.3;
 `
 export default MatiereBtn
