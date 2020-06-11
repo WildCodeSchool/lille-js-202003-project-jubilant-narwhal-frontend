@@ -6,7 +6,6 @@ import TextMatiere from './Text/TextMatiere'
 import TextValidate from './Text/TextValidate'
 import TextInput from './Text/TextInput'
 import DayColumn from './DayColumn'
-
 import styled from 'rn-css'
 import SendBtn from './Button/SendBtn'
 
