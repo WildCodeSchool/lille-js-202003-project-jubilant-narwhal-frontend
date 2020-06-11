@@ -7,7 +7,6 @@ const FlecheDroiteStyle = styled.Image`
   height: 3em;
   pressduration: 0.3;
 `
-
 const FlecheDroiteBtn = () => {
   return (
     <TouchableOpacity
@@ -16,9 +15,8 @@ const FlecheDroiteBtn = () => {
       }}
     >
       <FlecheDroiteStyle
-        /* source={require("../assets/Images/flecheD.png")} */ source={{
-          uri: 'https://images.emojiterra.com/google/android-10/512px/27a1.png'
-        }}
+        source={require('../../../assets/Images/flecheD.png')}
+        /* source={{ uri: 'https://images.emojiterra.com/google/android-10/512px/27a1.png' }} */
       />
     </TouchableOpacity>
   )

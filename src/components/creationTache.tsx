@@ -6,10 +6,8 @@ import TextMatiere from './Text/TextMatiere'
 import TextValidate from './Text/TextValidate'
 import TextInput from './Text/TextInput'
 import DayColumn from './DayColumn'
-import FlecheDroite from './Button/FlecheDroiteBtn'
 import styled from 'rn-css'
 import SendBtn from './Button/SendBtn'
-import ImageSendBtn from './ImagesBtn/ImageSendBtn'
 
 const ViewMatière = styled.View`
   flex-direction: row;
@@ -19,7 +17,6 @@ const ViewMatière = styled.View`
 const CreationTache = () => {
   return (
     <View>
-      <FlecheDroite />
       <DayColumn />
 
       <ViewMatière>
@@ -62,11 +59,7 @@ const CreationTache = () => {
         <TextValidate>Ajouter!</TextValidate>
       </ValidateBtn>
 
-      <SendBtn>
-        <ImageSendBtn
-          source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-        />
-      </SendBtn>
+      <SendBtn />
     </View>
   )
 }
