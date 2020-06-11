@@ -6,11 +6,14 @@ import TextMatiere from './Text/TextMatiere'
 import TextValidate from './Text/TextValidate'
 import TextInput from './Text/TextInput'
 import styled from 'rn-css'
+import SendBtn from './Button/SendBtn'
+import ImageSendBtn from './ImagesBtn/ImageSendBtn'
 
 const ViewMatière = styled.View`
   flex-direction: row;
   justify-content: space-around;
 `
+
 const CreationTache = () => {
   return (
     <View>
@@ -53,6 +56,12 @@ const CreationTache = () => {
         {' '}
         <TextValidate>Ajouter!</TextValidate>
       </ValidateBtn>
+
+      <SendBtn>
+        <ImageSendBtn
+          source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+        />
+      </SendBtn>
     </View>
   )
 }
