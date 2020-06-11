@@ -9,11 +9,14 @@ import DayColumn from './DayColumn'
 import FlecheDroite from './Button/FlecheDroiteBtn'
 
 import styled from 'rn-css'
+import SendBtn from './Button/SendBtn'
+import ImageSendBtn from './ImagesBtn/ImageSendBtn'
 
 const ViewMatière = styled.View`
   flex-direction: row;
   justify-content: space-around;
 `
+
 const CreationTache = () => {
   return (
     <View>
@@ -59,6 +62,12 @@ const CreationTache = () => {
         {' '}
         <TextValidate>Ajouter!</TextValidate>
       </ValidateBtn>
+
+      <SendBtn>
+        <ImageSendBtn
+          source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+        />
+      </SendBtn>
     </View>
   )
 }
