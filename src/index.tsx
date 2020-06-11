@@ -1,13 +1,11 @@
 import React from 'react'
 import { View } from 'react-native'
-// import CreationTache from './components/creationTache'
-// import DayOverlay from "./components/DayOverlay";
+import CreationTache from './components/creationTache'
 
 const App = () => {
   return (
     <View>
-      {/* <DayOverlay /> */}
-      {/* <CreationTache /> */}
+      <CreationTache />
     </View>
   )
 }
