@@ -1,5 +1,7 @@
 import React from 'react'
+
 import styled from 'rn-css'
+
 const FlecheDroiteStyle = styled.Image`
   width: 5em;
   height: 3em;
@@ -8,8 +10,6 @@ const FlecheDroiteStyle = styled.Image`
 `
 
 const FlecheDroiteBtn = () => {
-  return (
-    <FlecheDroiteStyle source={require('../assets/Images/FlecheDroite.png')} />
-  )
+  return <FlecheDroiteStyle source={require('../public/flecheD.png')} />
 }
 export default FlecheDroiteBtn

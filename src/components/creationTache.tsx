@@ -7,7 +7,6 @@ import TextValidate from './Text/TextValidate'
 import TextInput from './Text/TextInput'
 import DayColumn from './DayColumn'
 import FlecheDroite from './Button/FlecheDroiteBtn'
-
 import styled from 'rn-css'
 import SendBtn from './Button/SendBtn'
 import ImageSendBtn from './ImagesBtn/ImageSendBtn'
