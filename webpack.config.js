@@ -42,12 +42,21 @@ module.exports = {
         use: {
           loader: 'html-loader'
         }
+      },
+      {
+        test: /\.(jpe?g|gif|png|svg|mp4)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000
+            }
+          }
+        ]
       }
     ]
   },
-  plugins: [
-    new HtmlWebPackPlugin({ title: displayName })
-  ],
+  plugins: [new HtmlWebPackPlugin({ title: displayName })],
   resolve: {
     extensions: [
       '.web.tsx',
