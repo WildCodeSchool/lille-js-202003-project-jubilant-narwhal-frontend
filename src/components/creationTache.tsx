@@ -5,6 +5,8 @@ import MatiereBtn from './Button/MatiereBtn'
 import TextMatiere from './Text/TextMatiere'
 import TextValidate from './Text/TextValidate'
 import TextInput from './Text/TextInput'
+import DayColumn from './DayColumn'
+
 import styled from 'rn-css'
 
 const ViewMatière = styled.View`
@@ -14,6 +16,8 @@ const ViewMatière = styled.View`
 const CreationTache = () => {
   return (
     <View>
+      <DayColumn />
+
       <ViewMatière>
         <MatiereBtn
           onPress={() => {
