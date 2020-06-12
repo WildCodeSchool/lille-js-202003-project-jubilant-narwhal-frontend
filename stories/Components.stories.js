@@ -1,4 +1,5 @@
 import React from 'react'
+import Calendar from '../src/screens/Calendar'
 import FlecheDroiteBtn from '../src/components/Button/FlecheDroiteBtn'
 import MatiereBtn from '../src/components/Button/MatiereBtn'
 import SendBtn from '../src/components/Button/SendBtn'
@@ -19,3 +20,4 @@ export const MatiereBtnStory = () => <MatiereBtn />
 export const FlecheDroiteStory = () => <FlecheDroiteBtn />
 export const DayOffOverlayStory = () => <DayOffOverlay />
 export const TaskDoneOverlayStory = () => <TaskDoneOverlay />
+export const CalendarStory = () => <Calendar />
