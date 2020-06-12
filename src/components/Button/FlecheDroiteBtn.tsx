@@ -7,7 +7,6 @@ const FlecheDroiteStyle = styled.Image`
   height: 3em;
   pressduration: 0.3;
 `
-
 const FlecheDroiteBtn = () => {
   return (
     <TouchableOpacity
