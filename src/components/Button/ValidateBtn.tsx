@@ -1,5 +1,8 @@
 import styled from 'rn-css'
-const ValidateBtn = styled.TouchableOpacity`
+import React from 'react'
+import { Text } from 'react-native'
+
+const ValidateBtnStyled = styled.TouchableOpacity`
   background: blue;
   justify-content: center;
   align-items: center;
@@ -8,4 +11,16 @@ const ValidateBtn = styled.TouchableOpacity`
   border: 2px solid black;
   pressduration: 0.3;
 `
+
+const ValidateBtn = () => {
+  return (
+    <ValidateBtnStyled
+      onPress={() => {
+        console.log('fr')
+      }}
+    >
+      <Text>Ajouter</Text>
+    </ValidateBtnStyled>
+  )
+}
 export default ValidateBtn

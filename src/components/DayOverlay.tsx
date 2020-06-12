@@ -1,18 +1,26 @@
 import React from 'react'
-import { Text, Image } from 'react-native'
 import styled from 'rn-css'
 
 const Column = styled.View`
   border: 1px solid black;
+  background: grey;
+  opacity: 0.5;
   width: 20em;
   height: 40em;
+
+  align-items: center;
+`
+
+const TextColumn = styled.Text`
+  color: blue;
+  font-size: 5em;
+  text-align: center;
 `
 
 const DayOverlay = () => {
   return (
     <Column>
-      <Text>Jour Férié</Text>
-      <Image source={require('../../assets/Images/flecheD.png')} />
+      <TextColumn>Jour Férié</TextColumn>
     </Column>
   )
 }
