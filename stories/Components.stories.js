@@ -5,11 +5,12 @@ import SendBtn from '../src/components/Button/SendBtn'
 import ValidateBtn from '../src/components/Button/ValidateBtn'
 import DayColumn from '../src/components/DayColumn'
 import DayOverlay from '../src/components/DayOverlay'
-
+import App from '../src/index'
 export default {
   title: 'Components'
 }
 
+export const IndexStory = () => <App />
 export const DayOverlayStory = () => <DayOverlay />
 export const DayColumnStory = () => <DayColumn />
 export const ValidateBtnStory = () => <ValidateBtn />

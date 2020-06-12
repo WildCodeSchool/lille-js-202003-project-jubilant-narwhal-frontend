@@ -3,7 +3,7 @@ import React from 'react'
 import { Text } from 'react-native'
 
 const ValidateBtnStyled = styled.TouchableOpacity`
-  background: blue;
+  background: yellowgreen;
   justify-content: center;
   align-items: center;
   width: 100px;

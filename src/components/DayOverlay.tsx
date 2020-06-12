@@ -7,7 +7,7 @@ const Column = styled.View`
   opacity: 0.5;
   width: 20em;
   height: 40em;
-
+  justify-content: center;
   align-items: center;
 `
 

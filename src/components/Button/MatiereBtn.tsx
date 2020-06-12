@@ -3,7 +3,7 @@ import React from 'react'
 import { Text } from 'react-native'
 
 const MatiereBtnStyle = styled.TouchableOpacity`
-  background: red;
+  background: pink;
   justify-content: center;
   align-items: center;
   width: 100px;

@@ -17,7 +17,6 @@ const FlecheDroiteBtn = () => {
     >
       <FlecheDroiteStyle
         source={require('../../../assets/Images/flecheD.png')}
-        /* source={{ uri: 'https://images.emojiterra.com/google/android-10/512px/27a1.png' }} */
       />
     </TouchableOpacity>
   )
