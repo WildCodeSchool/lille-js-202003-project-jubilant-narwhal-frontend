@@ -1,11 +1,13 @@
 import React from 'react'
 import { View } from 'react-native'
-import CreationTache from './components/creationTache'
+import DayColumn from './components/DayColumn'
+import SendBtn from './components/Button/SendBtn'
 
 const App = () => {
   return (
     <View>
-      <CreationTache />
+      <DayColumn />
+      <SendBtn />
     </View>
   )
 }

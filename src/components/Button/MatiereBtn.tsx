@@ -1,6 +1,9 @@
 import styled from 'rn-css'
-const MatiereBtn = styled.TouchableOpacity`
-  background: red;
+import React from 'react'
+import { Text } from 'react-native'
+
+const MatiereBtnStyle = styled.TouchableOpacity`
+  background: pink;
   justify-content: center;
   align-items: center;
   width: 100px;
@@ -8,4 +11,16 @@ const MatiereBtn = styled.TouchableOpacity`
   border: 2px solid black;
   pressduration: 0.3;
 `
+
+const MatiereBtn = () => {
+  return (
+    <MatiereBtnStyle
+      onPress={() => {
+        console.log('fr')
+      }}
+    >
+      <Text>Français</Text>
+    </MatiereBtnStyle>
+  )
+}
 export default MatiereBtn
