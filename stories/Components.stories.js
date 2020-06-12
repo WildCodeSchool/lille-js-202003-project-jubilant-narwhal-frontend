@@ -1,5 +1,6 @@
 import React from 'react'
-import FlecheDroiteBtn from '../src/components/Button/FlecheDroiteBtn'
+import LeftArrow from '../src/components/Button/LeftArrow'
+import RightArrow from '../src/components/Button/RightArrow'
 import MatiereBtn from '../src/components/Button/MatiereBtn'
 import SendBtn from '../src/components/Button/SendBtn'
 import ValidateBtn from '../src/components/Button/ValidateBtn'
@@ -16,6 +17,7 @@ export const DayOverlayStory = () => <DaDayColumnyOverlay />
 export const ValidateBtnStory = () => <ValidateBtn />
 export const SendBtnStory = () => <SendBtn />
 export const MatiereBtnStory = () => <MatiereBtn />
-export const FlecheDroiteStory = () => <FlecheDroiteBtn />
+export const LeftArrowStory = () => <LeftArrow />
+export const RightArrowStory = () => <RightArrow />
 export const DayOffOverlayStory = () => <DayOffOverlay />
 export const TaskDoneOverlayStory = () => <TaskDoneOverlay />

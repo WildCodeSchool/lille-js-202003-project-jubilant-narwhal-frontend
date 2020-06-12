@@ -3,6 +3,8 @@ import { View } from 'react-native'
 import TextWeek from './Text/TextWeek'
 import TextPeriod from './Text/TextPeriod'
 import styled from 'rn-css'
+import LeftArrow from './Button/LeftArrow'
+import RightArrow from './Button/RightArrow'
 
 const ViewWeek = styled.View`
   flex-direction: row;
@@ -13,8 +15,10 @@ const WeeksNav = () => {
   return (
     <View>
       <ViewWeek>
+        <LeftArrow />
         <TextWeek>Semaine</TextWeek>
         <TextPeriod>du ... au ...</TextPeriod>
+        <RightArrow />
       </ViewWeek>
     </View>
   )
