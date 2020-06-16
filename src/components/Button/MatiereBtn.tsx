@@ -11,9 +11,10 @@ const subjectArray = [
   'Sport'
 ]
 
-const MatiereBtnStyle = styled.Button<{ color: string }>`
+const MatiereBtnStyle = styled.TouchableOpacity<{ color: string }>`
   background: ${(props) => props.color};
   justify-content: center;
+  text-align:center;
   align-items: center;
   width: 100px;
   height: 50px;
@@ -35,7 +36,7 @@ const MatiereBtn = () => {
           onPress={() => {
             BackgroundColors()
           }}
-          title={sub}
+
         >
           <Text>{sub}</Text>
         </MatiereBtnStyle>)
