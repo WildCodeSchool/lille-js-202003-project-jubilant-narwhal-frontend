@@ -5,8 +5,7 @@ import MatiereBtn from '../src/components/Button/MatiereBtn'
 import SendBtn from '../src/components/Button/SendBtn'
 import PenBtn from '../src/components/Button/PenBtn'
 import ValidateBtn from '../src/components/Button/ValidateBtn'
-import App from '../src/index'
-import addNewHomework from '../src/components/addNewHomework'
+import AddNewHomework from '../src/components/AddNewHomework'
 import DayOffOverlay from '../src/components/DayOffOverlay'
 import TaskDoneOverlay from '../src/components/TaskDoneOverlay'
 import ViewLeftBtn from '../src/components/Button/ViewLeftBtn'
@@ -17,7 +16,6 @@ export default {
   title: 'Components'
 }
 
-export const IndexStory = () => <App />
 export const ValidateBtnStory = () => <ValidateBtn />
 export const SendBtnStory = () => <SendBtn />
 export const MatiereBtnStory = () => <MatiereBtn />
@@ -29,4 +27,4 @@ export const ViewLeftBtnStory = () => <ViewLeftBtn />
 export const ViewRightBtnStory = () => <ViewRightBtn />
 export const PenBtnStory = () => <PenBtn />
 export const SwitchViewBtnStory = () => <SwitchViewBtn />
-export const addNewHomeworkStory = () => <addNewHomework />
+export const addNewHomeworkStory = () => <AddNewHomework />

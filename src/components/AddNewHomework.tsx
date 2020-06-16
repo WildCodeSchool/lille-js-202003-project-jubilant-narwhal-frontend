@@ -6,7 +6,7 @@ const TextTitle = styled.Text`
   font-size: 3em;
 `
 
-const addNewHomework = () => {
+const AddNewHomework = () => {
   return (
     <View>
       <TextTitle>Ajoute un devoir à faire</TextTitle>
@@ -14,4 +14,4 @@ const addNewHomework = () => {
   )
 }
 
-export default addNewHomework
+export default AddNewHomework

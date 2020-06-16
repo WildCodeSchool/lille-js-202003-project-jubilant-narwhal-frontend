@@ -4,9 +4,10 @@ import styled from 'rn-css'
 const Column = styled.View`
   justify-content: center;
   align-items: center;
-  width: 20em;
-  height: 40em;
+  width: 227px;
+  height: 707px;
   background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
 `
 
 const OverlayText = styled.Text`
