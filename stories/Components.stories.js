@@ -11,11 +11,13 @@ import TaskDoneOverlay from '../src/components/TaskDoneOverlay'
 import ViewLeftBtn from '../src/components/Button/ViewLeftBtn'
 import ViewRightBtn from '../src/components/Button/ViewRightBtn'
 import SwitchViewBtn from '../src/components/Button/SwitchViewBtn'
+import Checkbox from '../src/components/Button/CheckBox'
 
 export default {
   title: 'Components'
 }
 
+export const CheckBoxStory = () => <Checkbox />
 export const ValidateBtnStory = () => <ValidateBtn />
 export const SendBtnStory = () => <SendBtn />
 export const MatiereBtnStory = () => <MatiereBtn />
