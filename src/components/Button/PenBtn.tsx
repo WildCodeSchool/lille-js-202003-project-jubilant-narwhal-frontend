@@ -6,8 +6,8 @@ const PenBtnStyle = styled.Image`
   width: 20px;
   height: 20px;
   border-radius: 25%;
-  pressduration: 0.3;
 `
+
 const PenBtn = () => {
   return (
     <TouchableOpacity
