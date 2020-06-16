@@ -5,6 +5,7 @@ import MatiereBtn from '../src/components/Button/MatiereBtn'
 import SendBtn from '../src/components/Button/SendBtn'
 import PenBtn from '../src/components/Button/PenBtn'
 import ValidateBtn from '../src/components/Button/ValidateBtn'
+import AddNewHomework from '../src/components/AddNewHomework'
 import DayOffOverlay from '../src/components/DayOffOverlay'
 import TaskDoneOverlay from '../src/components/TaskDoneOverlay'
 import ViewLeftBtn from '../src/components/Button/ViewLeftBtn'
@@ -38,3 +39,4 @@ export const WeeksNavStory = () => <WeeksNav />
 export const DayColumnStory = () => <DayColumn />
 export const DayListDisplayStory = () => <DayListDisplay />
 export const MonthListDisplayStory = () => <MonthListDisplay />
+export const addNewHomeworkStory = () => <AddNewHomework />
