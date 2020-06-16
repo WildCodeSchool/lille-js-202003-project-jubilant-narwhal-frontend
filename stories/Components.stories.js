@@ -10,6 +10,7 @@ import DayOffOverlay from '../src/components/DayOffOverlay'
 import TaskDoneOverlay from '../src/components/TaskDoneOverlay'
 import ViewLeftBtn from '../src/components/Button/ViewLeftBtn'
 import ViewRightBtn from '../src/components/Button/ViewRightBtn'
+import SwitchViewBtn from '../src/components/Button/SwitchViewBtn'
 
 export default {
   title: 'Components'
@@ -25,3 +26,4 @@ export const TaskDoneOverlayStory = () => <TaskDoneOverlay />
 export const ViewLeftBtnStory = () => <ViewLeftBtn />
 export const ViewRightBtnStory = () => <ViewRightBtn />
 export const PenBtnStory = () => <PenBtn />
+export const SwitchViewBtnStory = () => <SwitchViewBtn />
