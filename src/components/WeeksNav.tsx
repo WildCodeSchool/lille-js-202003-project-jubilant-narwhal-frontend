@@ -10,11 +10,11 @@ const ViewWeek = styled.View`
   border-radius: 15px;
 `
 const TextPeriod = styled.Text`
-  color: black:
+  color: black;
   font-size:4em;
 `
 const TextWeek = styled.Text`
-  color: purple:
+  color: purple;
   font-size:4em;
 `
 
