@@ -1,9 +1,17 @@
 import styled from 'rn-css'
-import React from 'react'
-import { Text } from 'react-native'
+import React, { useState } from 'react'
+import { Text, View } from 'react-native'
+const subjectArray = [
+  'Français',
+  'Maths',
+  'Langues-Vivantes',
+  'Physique-Chimie',
+  'SVT',
+  'Histoire-Géographie'
+]
 
-const MatiereBtnStyle = styled.TouchableOpacity`
-  background: pink;
+const MatiereBtnStyle = styled.Button<{ color: string }>`
+  background: ${(props) => props.color};
   justify-content: center;
   align-items: center;
   width: 100px;
@@ -13,14 +21,24 @@ const MatiereBtnStyle = styled.TouchableOpacity`
 `
 
 const MatiereBtn = () => {
+  const [colorBackground, setColorBackground] = useState<string>('white')
+
+  const BackgroundColors = () => {
+    if (subjectArray[0]) { setColorBackground('red') } else if (subjectArray[1]) { setColorBackground('blue') } else if (subjectArray[2]) { setColorBackground('yellow') } else if (subjectArray[3]) { setColorBackground('pink') } else if (subjectArray[4]) { setColorBackground('green') } else if (subjectArray[5]) { setColorBackground('purple') }
+  }
+
   return (
-    <MatiereBtnStyle
-      onPress={() => {
-        console.log('fr')
-      }}
-    >
-      <Text>Français</Text>
-    </MatiereBtnStyle>
+    <View>
+      {subjectArray.map(sub => {
+        return (<MatiereBtnStyle color={colorBackground}
+          onPress={() => {
+            BackgroundColors()
+          }}
+          title={sub}
+        >
+          <Text>{sub}</Text>
+        </MatiereBtnStyle>)
+      })}</View>
   )
 }
 export default MatiereBtn
