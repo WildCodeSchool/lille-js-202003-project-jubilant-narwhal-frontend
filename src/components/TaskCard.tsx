@@ -1,11 +1,12 @@
 import React from 'react'
+import styled from 'rn-css'
+import { Colors } from '../theme/Colors'
 import PenBtn from './Button/PenBtn'
 import CheckBtn from './Button/CheckBtn'
-import styled from 'rn-css'
 
-const TaskCardWrapper = styled.View`
-padding: 20px;
-    background: pink;
+const TaskCardWrapper = styled.View<{color: string}>`
+    padding: 20px;
+    background: ${props => props.color};
     border-radius: 10px;
     justify-content: space-between;
     width: 459px;
@@ -28,7 +29,7 @@ const TaskCardText = styled.Text`
 `
 const TaskCard = () => {
   return (
-    <TaskCardWrapper>
+    <TaskCardWrapper color={Colors.cardBckg.svt}>
       <ViewCardRow>
         <ViewCardRow>
           <Placeholder />
