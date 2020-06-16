@@ -3,8 +3,8 @@ import { TouchableOpacity } from 'react-native'
 import styled from 'rn-css'
 
 const PenBtnStyle = styled.Image`
-  width: 1em;
-  height: 1em;
+  width: 20px;
+  height: 20px;
   border-radius: 25%;
   pressduration: 0.3;
 `
