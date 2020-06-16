@@ -14,6 +14,8 @@ import CheckBtn from '../src/components/Button/CheckBtn'
 import TaskCard from '../src/components/TaskCard'
 import WeeksNav from '../src/components/WeeksNav'
 import DayColumn from '../src/components/DayColumn'
+import DayListDisplay from '../src/components/DayListDisplay'
+import MonthListDisplay from '../src/components/MonthListDisplay'
 
 export default {
   title: 'Components'
@@ -34,3 +36,5 @@ export const SwitchViewBtnStory = () => <SwitchViewBtn />
 export const CheckBtnStory = () => <CheckBtn />
 export const WeeksNavStory = () => <WeeksNav />
 export const DayColumnStory = () => <DayColumn />
+export const DayListDisplayStory = () => <DayListDisplay />
+export const MonthListDisplayStory = () => <MonthListDisplay />
