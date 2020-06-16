@@ -7,7 +7,8 @@ const subjectArray = [
   'Langues-Vivantes',
   'Physique-Chimie',
   'SVT',
-  'Histoire-Géographie'
+  'Histoire-Géographie',
+  'Sport'
 ]
 
 const MatiereBtnStyle = styled.Button<{ color: string }>`
