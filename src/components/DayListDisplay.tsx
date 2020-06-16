@@ -4,7 +4,6 @@ import styled from 'rn-css'
 import PenBtn from './Button/PenBtn'
 
 const DayWrapper = styled.View`
-  border-color:  #6E4BC4;
   padding: 20px;
   width: 770px;
   height: 70px;
