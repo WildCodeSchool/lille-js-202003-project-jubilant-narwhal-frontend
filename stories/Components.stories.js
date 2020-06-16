@@ -23,6 +23,7 @@ export const LeftArrowStory = () => <LeftArrow />
 export const RightArrowStory = () => <RightArrow />
 export const DayOffOverlayStory = () => <DayOffOverlay />
 export const TaskDoneOverlayStory = () => <TaskDoneOverlay />
+export const TaskCardStory = () => <TaskCard />
 export const ViewLeftBtnStory = () => <ViewLeftBtn />
 export const ViewRightBtnStory = () => <ViewRightBtn />
 export const PenBtnStory = () => <PenBtn />
