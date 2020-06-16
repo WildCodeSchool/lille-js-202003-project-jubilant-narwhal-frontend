@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'rn-css'
-import ViewLeftBtn from '../components/Button/ViewLeftBtn'
-import ViewRightBtn from '../components/Button/ViewRightBtn'
+import ViewLeftBtn from './ViewLeftBtn'
+import ViewRightBtn from './ViewRightBtn'
 
 const Container = styled.View`
     width: 300px;
