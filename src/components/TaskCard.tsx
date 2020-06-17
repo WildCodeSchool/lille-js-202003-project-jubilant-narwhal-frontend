@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'rn-css'
 import { Colors } from '../theme/Colors'
 import PenBtn from './Button/PenBtn'
-import CheckBtn from './Button/CheckBtn'
+import Checkbox from './Button/CheckBox'
 
 const TaskCardWrapper = styled.View<{color: string}>`
     padding: 20px;
@@ -39,7 +39,7 @@ const TaskCard = () => {
       </ViewCardRow>
       <ViewCardRow>
         <TaskCardText>Devoir à faire</TaskCardText>
-        <CheckBtn />
+        <Checkbox />
       </ViewCardRow>
     </TaskCardWrapper>
   )
