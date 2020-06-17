@@ -1,19 +1,18 @@
 import styled from 'rn-css'
-import React, { useState } from 'react'
+import React from 'react'
 import { Text, View } from 'react-native'
-const subjectArray = [
-  'Français',
-  'Maths',
-  'Langues-Vivantes',
-  'Physique-Chimie',
-  'SVT',
-  'Histoire-Géographie',
-  'Sport'
+const subjectArray = [{ subject: 'Français', color: 'red' },
+  { subject: 'Mathématiques', color: 'blue' },
+  { subject: 'Langues vivantes', color: 'green' },
+  { subject: 'SVT', color: 'yellow' },
+  { subject: 'Physique_chimie', color: 'pink' },
+  { subject: 'Histoire_géographie', color: 'purple' }
 ]
 
-const MatiereBtnStyle = styled.Button<{ color: string }>`
+const MatiereBtnStyle = styled.TouchableOpacity<{ color: string }>`
   background: ${(props) => props.color};
   justify-content: center;
+  text-align:center;
   align-items: center;
   width: 100px;
   height: 50px;
@@ -22,22 +21,16 @@ const MatiereBtnStyle = styled.Button<{ color: string }>`
 `
 
 const MatiereBtn = () => {
-  const [colorBackground, setColorBackground] = useState<string>('white')
-
-  const BackgroundColors = () => {
-    if (subjectArray[0]) { setColorBackground('red') } else if (subjectArray[1]) { setColorBackground('blue') } else if (subjectArray[2]) { setColorBackground('yellow') } else if (subjectArray[3]) { setColorBackground('pink') } else if (subjectArray[4]) { setColorBackground('green') } else if (subjectArray[5]) { setColorBackground('purple') }
-  }
-
   return (
     <View>
       {subjectArray.map(sub => {
-        return (<MatiereBtnStyle color={colorBackground}
+        return (<MatiereBtnStyle color={sub.color}
           onPress={() => {
-            BackgroundColors()
+            console.log(sub.subject)
           }}
-          title={sub}
+
         >
-          <Text>{sub}</Text>
+          <Text>{sub.subject}</Text>
         </MatiereBtnStyle>)
       })}</View>
   )

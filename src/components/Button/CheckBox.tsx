@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { CheckBox, StyleSheet } from 'react-native'
-// import styled from "rn-css";
 
 const styles = StyleSheet.create({
   checkbox: {
