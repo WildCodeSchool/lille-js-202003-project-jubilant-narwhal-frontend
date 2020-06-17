@@ -39,4 +39,4 @@ export const WeeksNavStory = () => <WeeksNav />
 export const DayColumnStory = () => <DayColumn />
 export const DayListDisplayStory = () => <DayListDisplay />
 export const MonthListDisplayStory = () => <MonthListDisplay />
-export const addNewHomeworkStory = () => <AddNewHomework />
+export const AddNewHomeworkStory = () => <AddNewHomework />
