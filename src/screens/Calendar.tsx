@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Text } from 'react-native'
 
 const months = [
@@ -19,15 +19,14 @@ const months = [
 const weekDays = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam']
 const nDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 export default function Calendar () {
-  const activeDate = new Date()
-  const month = activeDate.getMonth()
+  const [activeDate] = useState(new Date())
 
   const generateMatrix = () => {
     const matrix: (string | number)[][] = []
     // Create header
     matrix[0] = weekDays
     const year = activeDate.getFullYear()
-    // const month = activeDate.getMonth()
+    const month = activeDate.getMonth()
     const firstDay = new Date(year, month, 1).getDay()
     let maxDays = nDays[month]
     if (month === 1) {
@@ -77,6 +76,7 @@ export default function Calendar () {
         {months[activeDate.getMonth()]} &nbsp;
         {activeDate.getFullYear()}
       </Text>
+
       {/* <TouchableOpacity onPress={() => changeMonth(-1)}>
         Previous
       </TouchableOpacity>
