@@ -11,7 +11,6 @@ import TaskDoneOverlay from '../src/components/TaskDoneOverlay'
 import ViewLeftBtn from '../src/components/Button/ViewLeftBtn'
 import ViewRightBtn from '../src/components/Button/ViewRightBtn'
 import SwitchViewBtn from '../src/components/Button/SwitchViewBtn'
-import CheckBtn from '../src/components/Button/CheckBtn'
 import TaskCard from '../src/components/TaskCard'
 import WeeksNav from '../src/components/WeeksNav'
 import DayColumn from '../src/components/DayColumn'
@@ -34,7 +33,6 @@ export const ViewLeftBtnStory = () => <ViewLeftBtn />
 export const ViewRightBtnStory = () => <ViewRightBtn />
 export const PenBtnStory = () => <PenBtn />
 export const SwitchViewBtnStory = () => <SwitchViewBtn />
-export const CheckBtnStory = () => <CheckBtn />
 export const WeeksNavStory = () => <WeeksNav />
 export const DayColumnStory = () => <DayColumn />
 export const DayListDisplayStory = () => <DayListDisplay />
