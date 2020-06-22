@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'rn-css'
 
 const MonthWrapper = styled.View`
-  background-color: rgba(110,75,196,0.7);
+  background-color: rgba(110, 75, 196, 0.7);
   border-radius: 3px;
   padding: 20px;
   width: 770px;
@@ -12,9 +12,9 @@ const MonthWrapper = styled.View`
   align-items: center;
 `
 const MonthText = styled.Text`
-    color: white;
-    font-size: 1.5em;
-    text-transform: uppercase;
+  color: rgba(0, 0, 0, 1);
+  font-size: 1.5em;
+  text-transform: uppercase;
 `
 
 const MonthListDisplay = () => {

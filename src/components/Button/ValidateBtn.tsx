@@ -3,12 +3,12 @@ import React from 'react'
 import { Text } from 'react-native'
 
 const ValidateBtnStyled = styled.TouchableOpacity`
-  background: yellowgreen;
+  background: rgba(154, 205, 50, 0, 7);
   justify-content: center;
   align-items: center;
   width: 100px;
   height: 50px;
-  border: 2px solid black;
+  border: 2px solid rgba(0, 0, 0, 1);
   pressduration: 0.3;
 `
 

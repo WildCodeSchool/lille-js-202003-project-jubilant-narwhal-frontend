@@ -22,10 +22,14 @@ const Placeholder = styled.View`
   margin-right: 10px;
   width: 30px;
   height: 30px;
+<<<<<<< HEAD
   background: gray;
+=======
+  background: rgba(165, 165, 165, 1);
+>>>>>>> 4cb7b6355c5f436f545c905f5eeefe12d32be0b4
 `
 const TaskCardText = styled.Text`
-  color: white;
+  color: rgba(0, 0, 0, 1);
   font-size: 2em;
 `
 const TaskCard = () => {
