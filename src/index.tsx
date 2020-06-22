@@ -1,13 +1,10 @@
 import React from 'react'
-import { View } from 'react-native'
-import DayColumn from './components/DayColumn'
-import SendBtn from './components/Button/SendBtn'
+import { View, Text } from 'react-native'
 
 const App = () => {
   return (
     <View>
-      <DayColumn />
-      <SendBtn />
+      <Text>blabla</Text>
     </View>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity } from 'react-native'
+
 import styled from 'rn-css'
 
 const FlecheDroiteStyle = styled.Image`
@@ -9,15 +9,7 @@ const FlecheDroiteStyle = styled.Image`
 `
 const FlecheDroiteBtn = () => {
   return (
-    <TouchableOpacity
-      onPress={() => {
-        console.log('fleche')
-      }}
-    >
-      <FlecheDroiteStyle
-        source={require('../../../assets/Images/flecheD.png')}
-      />
-    </TouchableOpacity>
+    <FlecheDroiteStyle source={require('../../../assets/Images/flecheD.png')} />
   )
 }
 export default FlecheDroiteBtn

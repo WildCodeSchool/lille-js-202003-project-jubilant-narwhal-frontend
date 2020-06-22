@@ -1,86 +1,122 @@
-import React, { useEffect, useState } from 'react'
-import { View, Text } from 'react-native'
+import React, { useState } from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
+import moment from 'moment'
+import FlecheDroiteBtn from '../components/Button/FlecheDroiteBtn'
 
-const months = [
-  'Janvier',
-  'Fevrier',
-  'Mars',
-  'Avril',
-  'Mai',
-  'Juin',
-  'Juillet',
-  'Aôut',
-  'Septembre',
-  'Octobre',
-  'Novembre',
-  'Decembre'
-]
+moment.locale('fr') // 'fr'
 
-const weekDays = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam']
-const nDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-export default function Calendar () {
-  const [activeDate] = useState(new Date())
+const Calendar = () => {
+  const today = new Date()
+  const [date, setDate] = useState(moment(today).format('dddd Do MMMM'))
+  const [number, setNumber] = useState(0)
+  const [toAdd, setToAdd] = useState(7)
 
-  const generateMatrix = () => {
-    const matrix: (string | number)[][] = []
-    // Create header
-    matrix[0] = weekDays
-    const year = activeDate.getFullYear()
-    const month = activeDate.getMonth()
-    const firstDay = new Date(year, month, 1).getDay()
-    let maxDays = nDays[month]
-    if (month === 1) {
-      // February
-      if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-        maxDays += 1
-      }
-      let counter = 1
-      for (let row = 1; row < 7; row++) {
-        matrix[row] = []
-        for (let col = 0; col < 7; col++) {
-          matrix[row][col] = -1
-          if (row === 1 && col >= firstDay) {
-            // Fill in rows only after the first day of the month
-            matrix[row][col] = counter++
-          } else if (row > 1 && counter <= maxDays) {
-            // Fill in rows only if the counter's not greater than
-            // the number of days in the month
-            matrix[row][col] = counter++
-          }
+  const todayCalendar = moment(today).format('dddd')
+
+  const printWeek = (todayCalendar: any) => {
+    let toPrint = [date]
+
+    switch (todayCalendar) {
+      case 'lundi':
+        for (let i = 1; i < 5; i++) {
+          toPrint.push(
+            moment()
+              .add(i + number, 'days')
+              .format('dddd Do MMMM')
+          )
         }
-      }
-
-      return matrix
+        break
+      case 'mardi':
+        toPrint = [
+          moment()
+            .subtract(1 + number, 'days')
+            .format('dddd Do MMMM'),
+          date
+        ]
+        for (let i = 1; i < 4; i++) {
+          toPrint.push(
+            moment()
+              .add(i + number, 'days')
+              .format('dddd Do MMMM')
+          )
+        }
+        break
+      case 'mercredi':
+        toPrint = [
+          moment()
+            .subtract(2 + number, 'days')
+            .format('dddd Do MMMM'),
+          moment()
+            .subtract(1 + number, 'days')
+            .format('dddd Do MMMM'),
+          date
+        ]
+        for (let i = 1; i < 3; i++) {
+          toPrint.push(
+            moment()
+              .add(i + number, 'days')
+              .format('dddd Do MMMM')
+          )
+        }
+        break
+      case 'jeudi':
+        toPrint = []
+        for (let i = 3; i > 0; i--) {
+          toPrint.push(
+            moment()
+              .subtract(i + number, 'days')
+              .format('dddd Do MMMM')
+          )
+        }
+        toPrint.push(
+          date,
+          moment()
+            .add(1 + number, 'days')
+            .format('dddd Do MMMM ')
+        )
+        break
+      case 'vendredi':
+        toPrint = []
+        for (let i = 4; i > 0; i--) {
+          toPrint.push(
+            moment()
+              .subtract(i + number, 'days')
+              .format('dddd Do MMMM')
+          )
+        }
+        toPrint.push(date)
+        break
     }
+
+    return toPrint
   }
 
-  // const changeMonth = (n) => {
-  // setMonth(() => {
-  //    return activeDate.getMonth() + n;
-  //  });
-  // };
+  const addOneWeek = () => {
+    setToAdd(toAdd + 7)
 
-  useEffect(() => {
-    generateMatrix()
-  }, [])
+    setNumber(number + 7)
+    setDate(
+      moment()
+        .add(toAdd, 'days')
+        .format('dddd Do MMMM')
+    )
+  }
 
   return (
-    <View>
-      <Text
-        style={{
-          fontWeight: 'bold',
-          fontSize: 18,
-          textAlign: 'center'
-        }}
-      >
-        {months[activeDate.getMonth()]} &nbsp;
-        {activeDate.getFullYear()}
-      </Text>
-
-      {/* <TouchableOpacity onPress={() => changeMonth(-1)}>
-        Previous
+    <>
+      <View>
+        <Text>{moment(today).format('dddd Do MMMM YYYY')}</Text>
+      </View>
+      <View>
+        {printWeek(todayCalendar).map((day, i) => (
+          <Text key={i}>{day}</Text>
+        ))}
+      </View>
+      <TouchableOpacity onPress={addOneWeek}>
+        <FlecheDroiteBtn />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => changeMonth(+1)}>Next</TouchableOpacity> */}
-    </View>
+    </>
   )
 }
+
+export default Calendar
