@@ -11,7 +11,7 @@ const Column = styled.View`
 `
 
 const OverlayText = styled.Text`
-  color: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
   font-size: 3em;
 `
 
