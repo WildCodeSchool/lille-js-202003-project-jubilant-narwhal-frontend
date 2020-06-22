@@ -5,9 +5,7 @@ const styles = StyleSheet.create({
   checkbox: {
     alignSelf: 'center',
     width: 30,
-    height: 30,
-    checkedColor: 'red',
-    uncheckedColor: 'yellow'
+    height: 30
   }
 })
 const Checkbox = () => {
