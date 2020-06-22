@@ -9,6 +9,7 @@ const Column = styled.View`
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 3px;
 `
+// This style doesn't work with rn-css
 const CheckImage = styled.Image`
   width: 150px;
   height: 150px;
