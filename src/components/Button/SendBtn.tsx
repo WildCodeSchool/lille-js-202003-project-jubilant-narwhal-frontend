@@ -3,7 +3,6 @@ import React from 'react'
 import { TouchableOpacity } from 'react-native'
 
 const SendBtnStyled = styled.Image`
-  pressduration: 0.3;
   width: 100px;
   height: 100px;
 `

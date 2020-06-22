@@ -4,17 +4,17 @@ import styled from 'rn-css'
 import PenBtn from './Button/PenBtn'
 
 const ColumnWrapper = styled.View<{ currentDay: boolean }>`
-  border-color:  #6E4BC4;
+  border-color: rgba(110,75,196,1);
   border-width: ${props => props.currentDay ? '3px' : '1px'};
   width: ${props => props.currentDay ? '262px' : '227px'};
   height: ${props => props.currentDay ? '760px' : '707px'};
   border-radius: 3px;
-  background: white;
+  background: rgba(255,255,255,1);
 `
 const DateWrapper = styled.View<{ currentDay: boolean }>`
   width: 100%;
   height: 70px;
-  background: ${props => props.currentDay ? 'rgb(110,75,196)' : 'rgb(136,114,191)'} ;
+  background: ${props => props.currentDay ? 'rgba(110,75,196,1)' : 'rgba(136,114,191,1)'} ;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
