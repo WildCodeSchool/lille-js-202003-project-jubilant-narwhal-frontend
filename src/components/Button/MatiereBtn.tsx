@@ -1,14 +1,7 @@
 import styled from 'rn-css'
 import React from 'react'
 import { Text, View } from 'react-native'
-const subjectArray = [
-  { subject: 'Français', color: 'red' },
-  { subject: 'Mathématiques', color: 'blue' },
-  { subject: 'Langues vivantes', color: 'green' },
-  { subject: 'SVT', color: 'yellow' },
-  { subject: 'Physique_chimie', color: 'pink' },
-  { subject: 'Histoire_géographie', color: 'purple' }
-]
+import ColorsSubjects from '../../theme/Colors'
 
 const MatiereBtnStyle = styled.TouchableOpacity<{ color: string }>`
   background: ${props => props.color};
@@ -23,7 +16,7 @@ const MatiereBtnStyle = styled.TouchableOpacity<{ color: string }>`
 const MatiereBtn = () => {
   return (
     <View>
-      {subjectArray.map(sub => {
+      {ColorsSubjects.map(sub => {
         return (
           <MatiereBtnStyle
             color={sub.color}
