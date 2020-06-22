@@ -1,12 +1,8 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 
 const App = () => {
-  return (
-    <View>
-      <Text>Welcome to CantooAgenda</Text>
-    </View>
-  )
+  return <View />
 }
 
 export default App
