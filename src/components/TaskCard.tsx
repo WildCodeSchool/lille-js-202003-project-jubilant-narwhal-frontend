@@ -4,27 +4,27 @@ import { Colors } from '../theme/Colors'
 import PenBtn from './Button/PenBtn'
 import Checkbox from './Button/CheckBox'
 
-const TaskCardWrapper = styled.View<{color: string}>`
-    padding: 20px;
-    background: ${props => props.color};
-    border-radius: 10px;
-    justify-content: space-between;
-    width: 459px;
-    height: 119px;
+const TaskCardWrapper = styled.View<{ color: string }>`
+  padding: 20px;
+  background: ${props => props.color};
+  border-radius: 10px;
+  justify-content: space-between;
+  width: 459px;
+  height: 119px;
 `
 const ViewCardRow = styled.View`
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `
 const Placeholder = styled.View`
-    margin-right: 10px;
-    width: 30px;
-    height: 30px;
-    background: gray;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  background: rgba(165, 165, 165, 1);
 `
 const TaskCardText = styled.Text`
-  color: white;
+  color: rgba(0, 0, 0, 1);
   font-size: 2em;
 `
 const TaskCard = () => {
