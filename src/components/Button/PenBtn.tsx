@@ -6,7 +6,6 @@ const PenBtnStyle = styled.Image`
   width: 1em;
   height: 1em;
   border-radius: 25%;
-  pressduration: 0.3;
 `
 
 const PenBtn = () => {
