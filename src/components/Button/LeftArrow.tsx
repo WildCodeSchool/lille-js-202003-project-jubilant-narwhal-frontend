@@ -5,7 +5,6 @@ import styled from 'rn-css'
 const LeftArrowStyle = styled.Image`
   width: 5em;
   height: 3em;
-  pressduration: 0.3;
 `
 const LeftArrow = () => {
   return (
