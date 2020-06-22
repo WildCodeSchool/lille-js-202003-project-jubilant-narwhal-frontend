@@ -7,7 +7,7 @@ const ViewBtn = styled.TouchableOpacity<{ colors: string }>`
   align-items: center;
   padding: 5px;
   box-sizing: border-box;
-  border: 1px solid rgba(128,0,128,1);
+  border: 1px solid 'rgba(128,0,128,1)';
   border-radius: 5px 0px 0px 5px;
 `
 
