@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'rn-css'
 import ColorsSubjects from '../theme/Colors'
 import PenBtn from './Button/PenBtn'
-import Checkbox from './Button/CheckBox'
+import { CheckBox, StyleSheet } from 'react-native'
 
-const TaskCardWrapper = styled.View<{ color: string }>`
+const TaskCardWrapper = styled.View<{ color: string, selected: boolean }>`
   padding: 20px;
-  background: ${props => props.color};
+  background: ${props => props.selected ? 'gray' : props.color};
   border-radius: 10px;
   justify-content: space-between;
   width: 459px;
@@ -28,9 +28,20 @@ const TaskCardText = styled.Text`
   color: white;
   font-size: 2em;
 `
+
+const styles = StyleSheet.create({
+  checkbox: {
+    alignSelf: 'center',
+    width: 30,
+    height: 30
+  }
+})
+
 const TaskCard = () => {
+  const [isSelected, setSelection] = useState(false)
+
   return (
-    <TaskCardWrapper color={ColorsSubjects[0].color}>
+    <TaskCardWrapper color = {ColorsSubjects[1].color} selected={isSelected}>
       <ViewCardRow>
         <ViewCardRow>
           <Placeholder />
@@ -40,7 +51,11 @@ const TaskCard = () => {
       </ViewCardRow>
       <ViewCardRow>
         <TaskCardText>Devoir à faire</TaskCardText>
-        <Checkbox />
+        <CheckBox
+          value={isSelected}
+          onValueChange={setSelection}
+          style={styles.checkbox}
+        />
       </ViewCardRow>
     </TaskCardWrapper>
   )
