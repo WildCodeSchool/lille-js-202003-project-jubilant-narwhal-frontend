@@ -12,24 +12,26 @@ const DayWrapper = styled.View`
   align-items: center;
 `
 const DateText = styled.Text<{ currentDay: boolean }>`
-    color: ${props => props.currentDay ? 'rgba(110,75,196,1)' : 'rgba(137,137,137,1)'};
-    font-size: ${props => props.currentDay ? '1.7em' : '1.5em'};
+  color: ${props =>
+    props.currentDay ? 'rgba(110,75,196,1)' : 'rgba(137,137,137,1)'};
+  font-size: ${props => (props.currentDay ? '1.7em' : '1.5em')};
 `
 
-const Line = styled.View <{ currentDay: boolean }>`
-    width: 550px;
-    height: 0px;
-    border-width: ${props => props.currentDay ? '3px' : '1px'};
-    border-color: ${props => props.currentDay ? 'rgba(110,75,196,1)' : 'rgba(137,137,137,1)'};
+const Line = styled.View<{ currentDay: boolean }>`
+  width: 550px;
+  height: 0px;
+  border-width: ${props => (props.currentDay ? '3px' : '1px')};
+  border-color: ${props =>
+    props.currentDay ? 'rgba(110,75,196,1)' : 'rgba(137,137,137,1)'};
 `
 
 const DayListDisplay = () => {
   const [currentDay] = useState<boolean>(false)
   return (
-    <DayWrapper >
+    <DayWrapper>
       <DateText currentDay={currentDay}>Mercredi 27</DateText>
-      <Line currentDay={currentDay}/>
-      <PenBtn/>
+      <Line currentDay={currentDay} />
+      <PenBtn />
     </DayWrapper>
   )
 }
