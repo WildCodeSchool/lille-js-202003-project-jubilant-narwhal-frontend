@@ -3,21 +3,23 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import moment from 'moment'
 import FlecheDroiteBtn from '../components/Button/FlecheDroiteBtn'
 
-moment.locale('fr') // 'fr'
+moment.locale('fr')
 
 const Calendar = () => {
   const today = new Date()
   const [date, setDate] = useState(moment(today).format('dddd Do MMMM'))
   const [number, setNumber] = useState(0)
   const [toAdd, setToAdd] = useState(7)
+  const [toSubstract, setToSubstract] = useState(7)
 
   const todayCalendar = moment(today).format('dddd')
 
   const printWeek = (todayCalendar: any) => {
-    let toPrint = [date]
+    let toPrint: any = []
 
     switch (todayCalendar) {
       case 'lundi':
+        toPrint.push(date)
         for (let i = 1; i < 5; i++) {
           toPrint.push(
             moment()
@@ -25,6 +27,7 @@ const Calendar = () => {
               .format('dddd Do MMMM')
           )
         }
+
         break
       case 'mardi':
         toPrint = [
@@ -90,16 +93,24 @@ const Calendar = () => {
 
     return toPrint
   }
-
-  const addOneWeek = () => {
+  const addSubWeek = (title: string) => {
     setToAdd(toAdd + 7)
-
-    setNumber(number + 7)
-    setDate(
-      moment()
-        .add(toAdd, 'days')
-        .format('dddd Do MMMM')
-    )
+    if (title === 'addOneWeek') {
+      setNumber(number + 7)
+      setDate(
+        moment()
+          .add(toAdd, 'days')
+          .format('dddd Do MMMM')
+      )
+    } else if (title === 'substractOneWeek') {
+      setNumber(number - 7)
+      setDate(
+        moment()
+          .add(toSubstract, 'days')
+          .format('dddd Do MMMM')
+      )
+      setToSubstract(toSubstract - 7)
+    }
   }
 
   return (
@@ -108,12 +119,15 @@ const Calendar = () => {
         <Text>{moment(today).format('dddd Do MMMM YYYY')}</Text>
       </View>
       <View>
-        {printWeek(todayCalendar).map((day, i) => (
+        {printWeek(todayCalendar).map((day: any, i: any) => (
           <Text key={i}>{day}</Text>
         ))}
       </View>
-      <TouchableOpacity onPress={addOneWeek}>
+      <TouchableOpacity onPress={() => addSubWeek('addOneWeek')}>
         <FlecheDroiteBtn />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => addSubWeek('substractOneWeek')}>
+        <Text>semaine précédente</Text>
       </TouchableOpacity>
     </>
   )
