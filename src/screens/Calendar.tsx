@@ -7,10 +7,7 @@ moment.locale('fr')
 
 const Calendar = () => {
   const today = new Date()
-  const [date, setDate] = useState(moment(today).format('dddd Do MMMM'))
   const [number, setNumber] = useState(0)
-  const [toAdd, setToAdd] = useState(7)
-  const [toSubstract, setToSubstract] = useState(7)
 
   const todayCalendar = moment(today).format('dddd')
 
@@ -19,7 +16,11 @@ const Calendar = () => {
 
     switch (todayCalendar) {
       case 'lundi':
-        toPrint.push(date)
+        toPrint.push(
+          moment()
+            .add(number, 'days')
+            .format('dddd Do MMMM')
+        )
         for (let i = 1; i < 5; i++) {
           toPrint.push(
             moment()
@@ -34,7 +35,9 @@ const Calendar = () => {
           moment()
             .subtract(1 + number, 'days')
             .format('dddd Do MMMM'),
-          date
+          moment()
+            .add(number, 'days')
+            .format('dddd Do MMMM')
         ]
         for (let i = 1; i < 4; i++) {
           toPrint.push(
@@ -52,7 +55,9 @@ const Calendar = () => {
           moment()
             .subtract(1 + number, 'days')
             .format('dddd Do MMMM'),
-          date
+          moment()
+            .add(number, 'days')
+            .format('dddd Do MMMM')
         ]
         for (let i = 1; i < 3; i++) {
           toPrint.push(
@@ -72,7 +77,9 @@ const Calendar = () => {
           )
         }
         toPrint.push(
-          date,
+          moment()
+            .add(number, 'days')
+            .format('dddd Do MMMM'),
           moment()
             .add(1 + number, 'days')
             .format('dddd Do MMMM ')
@@ -87,30 +94,23 @@ const Calendar = () => {
               .format('dddd Do MMMM')
           )
         }
-        toPrint.push(date)
+        toPrint.push(
+          moment()
+            .add(number, 'days')
+            .format('dddd Do MMMM')
+        )
         break
     }
 
     return toPrint
   }
-  const addSubWeek = (title: string) => {
-    setToAdd(toAdd + 7)
-    if (title === 'addOneWeek') {
-      setNumber(number + 7)
-      setDate(
-        moment()
-          .add(toAdd, 'days')
-          .format('dddd Do MMMM')
-      )
-    } else if (title === 'substractOneWeek') {
-      setNumber(number - 7)
-      setDate(
-        moment()
-          .add(toSubstract, 'days')
-          .format('dddd Do MMMM')
-      )
-      setToSubstract(toSubstract - 7)
-    }
+
+  const addOneWeek = () => {
+    setNumber(number + 7)
+  }
+
+  const removeOneWeek = () => {
+    setNumber(number - 7)
   }
 
   return (
@@ -123,10 +123,10 @@ const Calendar = () => {
           <Text key={i}>{day}</Text>
         ))}
       </View>
-      <TouchableOpacity onPress={() => addSubWeek('addOneWeek')}>
+      <TouchableOpacity onPress={addOneWeek}>
         <FlecheDroiteBtn />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => addSubWeek('substractOneWeek')}>
+      <TouchableOpacity onPress={removeOneWeek}>
         <Text>semaine précédente</Text>
       </TouchableOpacity>
     </>
