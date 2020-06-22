@@ -1,4 +1,5 @@
 import React from 'react'
+import Calendar from '../src/Screens/Calendar'
 import LeftArrow from '../src/components/Button/LeftArrow'
 import RightArrow from '../src/components/Button/RightArrow'
 import MatiereBtn from '../src/components/Button/MatiereBtn'
@@ -38,3 +39,4 @@ export const DayColumnStory = () => <DayColumn />
 export const DayListDisplayStory = () => <DayListDisplay />
 export const MonthListDisplayStory = () => <MonthListDisplay />
 export const AddNewHomeworkStory = () => <AddNewHomework />
+export const CalendarStory = () => <Calendar />
