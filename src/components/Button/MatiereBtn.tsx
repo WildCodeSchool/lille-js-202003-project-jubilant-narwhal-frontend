@@ -1,7 +1,6 @@
 import styled from 'rn-css'
 import React from 'react'
-import { Text, View } from 'react-native'
-import ColorsSubjects from '../../theme/Colors'
+import { Text } from 'react-native'
 
 const MatiereBtnStyle = styled.TouchableOpacity<{ color: string }>`
   background: ${props => props.color};
@@ -13,22 +12,16 @@ const MatiereBtnStyle = styled.TouchableOpacity<{ color: string }>`
   border: 2px solid black;
 `
 
-const MatiereBtn = () => {
+type Props = {
+  subject: any
+  handleChange: any
+}
+
+const MatiereBtn = ({ subject, handleChange }: Props) => {
   return (
-    <View>
-      {ColorsSubjects.map(sub => {
-        return (
-          <MatiereBtnStyle
-            color={sub.color}
-            onPress={() => {
-              console.log(sub.subject)
-            }}
-          >
-            <Text>{sub.subject}</Text>
-          </MatiereBtnStyle>
-        )
-      })}
-    </View>
+    <MatiereBtnStyle color={subject.color} onPress={handleChange}>
+      <Text>{subject.label}</Text>
+    </MatiereBtnStyle>
   )
 }
 export default MatiereBtn
