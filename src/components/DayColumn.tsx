@@ -10,19 +10,17 @@ const ColumnWrapper = styled.View<{ today: any }>`
   height: ${(props) => (props.today === toMatch ? '760px' : '707px')};
   border-radius: 3px;
   background: rgba(255, 255, 255, 1);
-  flex-direction: row;
 `
 const DateWrapper = styled.View<{ today: any }>`
   width: 100%;
   height: 70px;
   background: ${(props) =>
     props.today === toMatch ? 'rgba(105,228,57,1)' : 'rgba(110,75,196,1)'};
-  flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
   align-items: center;
 `
 const DateText = styled.Text<{ today: any }>`
+  align-items: center;
   color: white;
   font-weight: bold;
   font-size: ${(props) => (props.today === toMatch ? '1.5em' : '1.3em')};
