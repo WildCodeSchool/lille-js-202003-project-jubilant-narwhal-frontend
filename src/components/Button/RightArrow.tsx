@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity } from 'react-native'
+
 import styled from 'rn-css'
 
 const RightArrowStyle = styled.Image`
@@ -8,13 +8,9 @@ const RightArrowStyle = styled.Image`
 `
 const RightArrow = () => {
   return (
-    <TouchableOpacity
-      onPress={() => {
-        console.log('fleche')
-      }}
-    >
-      <RightArrowStyle source={require('../../../assets/Images/flecheD.png')} />
-    </TouchableOpacity>
+
+    <RightArrowStyle source={require('../../../assets/Images/flecheD.png')} />
+
   )
 }
 export default RightArrow
