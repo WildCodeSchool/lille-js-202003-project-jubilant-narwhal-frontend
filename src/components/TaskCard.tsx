@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'rn-css'
-import ColorsSubjects from '../theme/Colors'
+import { SubjectsColors } from '../theme/Colors'
 import PenBtn from './Button/PenBtn'
 import Checkbox from './Button/CheckBox'
 
@@ -30,7 +30,7 @@ const TaskCardText = styled.Text`
 `
 const TaskCard = () => {
   return (
-    <TaskCardWrapper color={ColorsSubjects[0].color}>
+    <TaskCardWrapper color={SubjectsColors[0].colors.background}>
       <ViewCardRow>
         <ViewCardRow>
           <Placeholder />
