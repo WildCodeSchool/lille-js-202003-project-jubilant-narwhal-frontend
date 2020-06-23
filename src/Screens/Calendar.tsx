@@ -16,6 +16,7 @@ const TextCalendar = styled.Text`
 `
 
 const TextDay = styled.Text`
+  text-align: center;
   font-size: 2em;
 `
 moment.locale('fr')
