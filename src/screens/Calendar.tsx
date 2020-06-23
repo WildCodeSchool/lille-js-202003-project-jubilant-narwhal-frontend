@@ -33,7 +33,7 @@ const Calendar = () => {
       case 'mardi':
         toPrint = [
           moment()
-            .subtract(1 + number, 'days')
+            .subtract(1 - number, 'days')
             .format('dddd Do MMMM'),
           moment()
             .add(number, 'days')
@@ -50,10 +50,10 @@ const Calendar = () => {
       case 'mercredi':
         toPrint = [
           moment()
-            .subtract(2 + number, 'days')
+            .subtract(2 - number, 'days')
             .format('dddd Do MMMM'),
           moment()
-            .subtract(1 + number, 'days')
+            .subtract(1 - number, 'days')
             .format('dddd Do MMMM'),
           moment()
             .add(number, 'days')
@@ -72,7 +72,7 @@ const Calendar = () => {
         for (let i = 3; i > 0; i--) {
           toPrint.push(
             moment()
-              .subtract(i + number, 'days')
+              .subtract(i - number, 'days')
               .format('dddd Do MMMM')
           )
         }
@@ -90,7 +90,7 @@ const Calendar = () => {
         for (let i = 4; i > 0; i--) {
           toPrint.push(
             moment()
-              .subtract(i + number, 'days')
+              .subtract(i - number, 'days')
               .format('dddd Do MMMM')
           )
         }
@@ -100,6 +100,25 @@ const Calendar = () => {
             .format('dddd Do MMMM')
         )
         break
+      case 'samedi':
+        toPrint = []
+        for (let i = 2; i > 7; i++) {
+          toPrint.push(
+            moment()
+              .add(i + number, 'days')
+              .format('dddd Do MMMM')
+          )
+        }
+        break
+      case 'dimanche':
+        toPrint = []
+        for (let i = 1; i > 6; i++) {
+          toPrint.push(
+            moment()
+              .add(i + number, 'days')
+              .format('dddd Do MMMM')
+          )
+        }
     }
 
     return toPrint
