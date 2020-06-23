@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { View } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 import moment from 'moment'
+import RightArrow from '../components/Button/RightArrow'
+import LeftArrow from '../components/Button/LeftArrow'
 import styled from 'rn-css'
 
 const CalendarView = styled.View`
@@ -20,7 +22,7 @@ moment.locale('fr')
 
 const Calendar = () => {
   const today = new Date()
-  const [number] = useState(0)
+  const [number, setNumber] = useState(0)
 
   const todayCalendar = moment(today).format('dddd')
 
@@ -137,17 +139,31 @@ const Calendar = () => {
     return toPrint
   }
 
+  const addOneWeek = () => {
+    setNumber(number + 7)
+  }
+
+  const removeOneWeek = () => {
+    setNumber(number - 7)
+  }
+
   return (
     <>
       <View>
         <TextCalendar>{moment(today).format('dddd Do MMMM YYYY')}</TextCalendar>
       </View>
-
       <CalendarView>
         {printWeek(todayCalendar).map((day: any, i: any) => (
           <TextDay key={i}>{day}</TextDay>
         ))}
       </CalendarView>
+
+      <TouchableOpacity onPress={addOneWeek}>
+        <RightArrow />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={removeOneWeek}>
+        <LeftArrow/>
+      </TouchableOpacity>
     </>
   )
 }
