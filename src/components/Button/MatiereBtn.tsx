@@ -17,7 +17,7 @@ const MatiereBtnStyle = styled.TouchableOpacity<{ colors: any }>`
 
 const TextBtn = styled.Text`
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 0.9em;
   letter-spacing: 0.05em;
   line-height: 1.3em;
 `
@@ -25,12 +25,12 @@ const TextBtn = styled.Text`
 // Props type
 type Props = {
   subject: any
-  handleChange: any
+  selectSubject: any
 }
 
-const MatiereBtn = ({ subject, handleChange }: Props) => {
+const MatiereBtn = ({ subject, selectSubject }: Props) => {
   return (
-    <MatiereBtnStyle colors={subject.colors} onPress={handleChange}>
+    <MatiereBtnStyle colors={subject.colors} onPress={selectSubject}>
       <TextBtn>{subject.label}</TextBtn>
     </MatiereBtnStyle>
   )
