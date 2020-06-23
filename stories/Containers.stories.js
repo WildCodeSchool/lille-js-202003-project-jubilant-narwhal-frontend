@@ -1,8 +1,8 @@
 import React from 'react'
-import AddTaskModal from '../src/containers/AddTaskModal'
+import AddTaskContainer from '../src/containers/AddTaskContainer'
 
 export default {
   title: 'Containers'
 }
 
-export const AddTaskModalStory = () => <AddTaskModal />
+export const AddTaskContainerStory = () => <AddTaskContainer />
