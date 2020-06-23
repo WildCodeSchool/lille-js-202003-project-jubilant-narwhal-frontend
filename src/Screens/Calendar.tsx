@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, TouchableOpacity } from 'react-native'
+import { View, TouchableOpacity, Text } from 'react-native'
 
 import moment from 'moment'
 import RightArrow from '../components/Button/RightArrow'
@@ -171,6 +171,9 @@ const Calendar = () => {
         <RightArrow />
       </TouchableOpacity>
     </CalendarView>
+       <TouchableOpacity onPress={removeOneWeek}>
+         <Text>revenir à la semaine </Text>
+      </TouchableOpacity>
 
 
     </>
