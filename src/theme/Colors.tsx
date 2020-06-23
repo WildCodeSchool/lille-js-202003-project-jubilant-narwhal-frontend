@@ -8,7 +8,7 @@ export const SubjectsColors = [
     selected: false
   },
   {
-    label: 'Mathématiques',
+    label: 'Maths',
     colors: {
       background: 'rgba(88, 199, 234, 0.7)',
       border: 'rgba(17, 108, 227, 1)'
@@ -40,7 +40,7 @@ export const SubjectsColors = [
     selected: false
   },
   {
-    label: 'Histoire Géographie',
+    label: 'Histoire Géo',
     colors: {
       background: 'rgba(228, 65, 99, 0.7)',
       border: 'rgba(167, 49, 95, 1)'
