@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import moment from 'moment'
 import FlecheDroiteBtn from '../components/Button/FlecheDroiteBtn'
+import DayColumn from '../components/DayColumn'
 
 moment.locale('fr')
 
@@ -141,9 +142,10 @@ const Calendar = () => {
       <View>
         <Text>{moment(today).format('dddd Do MMMM YYYY')}</Text>
       </View>
-      <View>
-        {printWeek(todayCalendar).map((day: any, i: any) => (
-          <Text key={i}>{day}</Text>
+      <View style={{ flexDirection: 'row' }}>
+        {printWeek(todayCalendar).map((...day: any) => (
+          <DayColumn key={day} day={day} />
+
         ))}
       </View>
       <TouchableOpacity onPress={addOneWeek}>
