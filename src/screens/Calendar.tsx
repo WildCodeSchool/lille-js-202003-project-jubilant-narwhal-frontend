@@ -132,6 +132,10 @@ const Calendar = () => {
     setNumber(number - 7)
   }
 
+  const returnCurrentWeek = () => {
+    setNumber(0)
+  }
+
   return (
     <>
       <View>
@@ -147,6 +151,9 @@ const Calendar = () => {
       </TouchableOpacity>
       <TouchableOpacity onPress={removeOneWeek}>
         <Text>semaine précédente</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={returnCurrentWeek}>
+        <Text>retour à la semaine</Text>
       </TouchableOpacity>
     </>
   )
