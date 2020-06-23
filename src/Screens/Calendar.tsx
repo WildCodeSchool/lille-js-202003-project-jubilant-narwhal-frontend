@@ -148,22 +148,22 @@ const Calendar = () => {
   }
 
   return (
-    <>
-      <View>
-        <TextCalendar>{moment(today).format('dddd Do MMMM YYYY')}</TextCalendar>
-      </View>
-      <CalendarView>
-        {printWeek(todayCalendar).map((day: any, i: any) => (
-          <TextDay key={i}>{day}</TextDay>
-        ))}
-      </CalendarView>
+    <><View>
+      <TextCalendar>{moment(today).format('dddd Do MMMM YYYY')}</TextCalendar>
+    </View>
 
-      <TouchableOpacity onPress={addOneWeek}>
-        <RightArrow />
-      </TouchableOpacity>
+    <CalendarView>
       <TouchableOpacity onPress={removeOneWeek}>
         <LeftArrow/>
       </TouchableOpacity>
+      {printWeek(todayCalendar).map((day: any, i: any) => (
+        <TextDay key={i}>{day}</TextDay>
+      ))}
+      <TouchableOpacity onPress={addOneWeek}>
+        <RightArrow />
+      </TouchableOpacity>
+    </CalendarView>
+
     </>
   )
 }
