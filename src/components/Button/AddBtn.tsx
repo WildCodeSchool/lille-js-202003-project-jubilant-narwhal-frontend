@@ -1,26 +1,32 @@
 import styled from 'rn-css'
 import React from 'react'
-import { Text } from 'react-native'
 
-const ValidateBtnStyled = styled.TouchableOpacity`
-  background: rgba(154, 205, 50, 0.7);
+// Styled components
+const AddBtnStyled = styled.TouchableOpacity<{ color: any }>`
+  border-radius: 10px;
+  padding: 5px 20px;
+  background-color: ${props => props.color};
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 50px;
-  border: 2px solid 'rgba(0,0,0,1)';
-  pressduration: 0.3;
 `
 
-const ValidateBtn = () => {
+const AddBtnText = styled.Text`
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+  font-size: 1em;
+`
+
+// Props type
+type Props = {
+  project: any
+  addTask: any
+}
+
+const AddBtn = ({ project, addTask }: Props) => {
   return (
-    <ValidateBtnStyled
-      onPress={() => {
-        console.log('fr')
-      }}
-    >
-      <Text>Ajouter</Text>
-    </ValidateBtnStyled>
+    <AddBtnStyled color={project.primary} onPress={addTask}>
+      <AddBtnText>Ajouter</AddBtnText>
+    </AddBtnStyled>
   )
 }
-export default ValidateBtn
+export default AddBtn
