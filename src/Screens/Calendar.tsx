@@ -5,6 +5,7 @@ import moment from 'moment'
 import RightArrow from '../components/Button/RightArrow'
 import LeftArrow from '../components/Button/LeftArrow'
 import styled from 'rn-css'
+import DayColumn from '../components/DayColumn'
 
 const CalendarView = styled.View`
   flex-direction: row;
@@ -14,11 +15,6 @@ const CalendarView = styled.View`
 const TextCalendar = styled.Text`
   font-size: 3em;
   text-align: center;
-`
-
-const TextDay = styled.Text`
-  text-align: center;
-  font-size: 2em;
 `
 moment.locale('fr')
 
@@ -156,17 +152,18 @@ const Calendar = () => {
 
 
   return (
-    <><View>
-      <TextCalendar>{moment(today).format('dddd Do MMMM YYYY')}</TextCalendar>
+    <>
+      <View>
+        <TextCalendar>{moment(today).format('dddd Do MMMM YYYY')}</TextCalendar>
     </View>
 
     <CalendarView>
       <TouchableOpacity onPress={removeOneWeek}>
         <LeftArrow/>
       </TouchableOpacity>
-      {printWeek(todayCalendar).map((day: any, i: any) => (
-        <TextDay key={i}>{day}</TextDay>
-      ))}
+      {printWeek(todayCalendar).map((...day: any) => (
+          <DayColumn key={day} day={day} />
+        ))}
       <TouchableOpacity onPress={addOneWeek}>
         <RightArrow />
       </TouchableOpacity>
@@ -174,7 +171,6 @@ const Calendar = () => {
        <TouchableOpacity onPress={removeOneWeek}>
          <Text>revenir à la semaine </Text>
       </TouchableOpacity>
-
 
     </>
   )
