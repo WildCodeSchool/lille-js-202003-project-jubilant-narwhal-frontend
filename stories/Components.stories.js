@@ -17,6 +17,8 @@ import WeeksNav from '../src/components/WeeksNav'
 import DayColumn from '../src/components/DayColumn'
 import DayListDisplay from '../src/components/DayListDisplay'
 import MonthListDisplay from '../src/components/MonthListDisplay'
+import TextInput from '../src/components/Text/TextInput'
+import CreateTask from '../src/components/CreateTask'
 
 export default {
   title: 'Components'
@@ -40,3 +42,5 @@ export const DayListDisplayStory = () => <DayListDisplay />
 export const MonthListDisplayStory = () => <MonthListDisplay />
 export const AddNewHomeworkStory = () => <AddNewHomework />
 export const CalendarStory = () => <Calendar />
+export const TextInputStory = () => <TextInput />
+export const CreateTaskStory = () => <CreateTask />
