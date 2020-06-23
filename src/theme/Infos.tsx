@@ -1,11 +1,12 @@
-export const SubjectsColors = [
+export const SubjectsInfo = [
   {
     label: 'Français',
     colors: {
       background: 'rgba(141, 71, 214, 0.7)',
       border: 'rgba(89, 46, 150, 1)'
     },
-    selected: false
+    selected: false,
+    logo: '../assets/Cantoo/Français.svg'
   },
   {
     label: 'Maths',
@@ -13,7 +14,8 @@ export const SubjectsColors = [
       background: 'rgba(88, 199, 234, 0.7)',
       border: 'rgba(17, 108, 227, 1)'
     },
-    selected: false
+    selected: false,
+    logo: '../assets/Cantoo/Mathématiques.svg'
   },
   {
     label: 'Langues vivantes',
@@ -21,7 +23,8 @@ export const SubjectsColors = [
       background: 'rgba(44, 116, 251, 0.7)',
       border: 'rgba(20, 58, 204, 1)'
     },
-    selected: false
+    selected: false,
+    logo: '../assets/Cantoo/Langues.svg'
   },
   {
     label: 'SVT',
@@ -29,7 +32,8 @@ export const SubjectsColors = [
       background: 'rgba(105, 209, 130, 0.7)',
       border: 'rgba(58, 126, 111, 1)'
     },
-    selected: false
+    selected: false,
+    logo: '../assets/Cantoo/SVT.svg'
   },
   {
     label: 'Physique Chimie',
@@ -37,7 +41,8 @@ export const SubjectsColors = [
       background: 'rgba(242, 162, 51, 0.7)',
       border: 'rgba(238, 130, 51, 1)'
     },
-    selected: false
+    selected: false,
+    logo: '../assets/Cantoo/Physique-Chimie.svg'
   },
   {
     label: 'Histoire Géo',
@@ -45,7 +50,8 @@ export const SubjectsColors = [
       background: 'rgba(228, 65, 99, 0.7)',
       border: 'rgba(167, 49, 95, 1)'
     },
-    selected: false
+    selected: false,
+    logo: '../assets/Cantoo/Histoire.svg'
   }
 ]
 
