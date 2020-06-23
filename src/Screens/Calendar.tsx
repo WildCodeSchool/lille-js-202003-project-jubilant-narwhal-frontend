@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View } from 'react-native'
 import moment from 'moment'
 import styled from 'rn-css'
+import DayColumn from '../components/DayColumn'
 
 const CalendarView = styled.View`
   flex-direction: row;
@@ -13,9 +14,6 @@ const TextCalendar = styled.Text`
   text-align: center;
 `
 
-const TextDay = styled.Text`
-  font-size: 2em;
-`
 moment.locale('fr')
 
 const Calendar = () => {
@@ -142,10 +140,9 @@ const Calendar = () => {
       <View>
         <TextCalendar>{moment(today).format('dddd Do MMMM YYYY')}</TextCalendar>
       </View>
-
       <CalendarView>
-        {printWeek(todayCalendar).map((day: any, i: any) => (
-          <TextDay key={i}>{day}</TextDay>
+        {printWeek(todayCalendar).map((...day: any) => (
+          <DayColumn key={day} day={day} />
         ))}
       </CalendarView>
     </>
