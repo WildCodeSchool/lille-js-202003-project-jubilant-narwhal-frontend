@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { View, TouchableOpacity } from 'react-native'
+import { View, TouchableOpacity, Text } from 'react-native'
+
 import moment from 'moment'
 import RightArrow from '../components/Button/RightArrow'
 import LeftArrow from '../components/Button/LeftArrow'
@@ -140,6 +141,11 @@ const Calendar = () => {
     return toPrint
   }
 
+
+  const returnCurrentWeek = () => {
+    setNumber(0)
+  }
+
   const addOneWeek = () => {
     setNumber(number + 7)
   }
@@ -147,6 +153,7 @@ const Calendar = () => {
   const removeOneWeek = () => {
     setNumber(number - 7)
   }
+
 
   return (
     <><View>
@@ -164,6 +171,10 @@ const Calendar = () => {
         <RightArrow />
       </TouchableOpacity>
     </CalendarView>
+       <TouchableOpacity onPress={removeOneWeek}>
+         <Text>revenir à la semaine </Text>
+      </TouchableOpacity>
+
 
     </>
   )
