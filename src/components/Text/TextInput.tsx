@@ -1,8 +1,10 @@
 import styled from 'rn-css'
 
 const TextInput = styled.TextInput`
-  color: rgba(0, 0, 0, 1);
-  font-size: 2em;
-  border: 2px solid 'rgba(128,0,128,1)';
+  width: 100%;
+  height: 40%;
+  font-size: 1em;
+  border: 1px solid black;
+  border-radius: 3px;
 `
 export default TextInput
