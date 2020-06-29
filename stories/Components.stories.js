@@ -17,7 +17,7 @@ import WeeksNav from '../src/components/WeeksNav'
 import DayColumn from '../src/components/DayColumn'
 import DayListDisplay from '../src/components/DayListDisplay'
 import MonthListDisplay from '../src/components/MonthListDisplay'
-import TextInput from '../src/components/Text/TextInput'
+import TextInputTask from '../src/components/Text/TextInputTask'
 import CreateTask from '../src/components/CreateTask'
 
 export default {

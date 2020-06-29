@@ -1,24 +1,14 @@
-// import styled from 'rn-css'
-// import React, { useState } from 'react'
-// import { Text } from 'react-native'
+import styled from 'rn-css'
+import React from 'react'
 
-// const TextInputStyled = styled.TextInput`
-//   color: rgba(0, 0, 0, 1);
-//   font-size: 2em;
-//   border: 2px solid 'rgba(128,0,128,1)';
-// `
+const TextInputStyled = styled.TextInput`
+  color: rgba(0, 0, 0, 1);
+  font-size: 2em;
+  border: 2px solid 'rgba(128,0,128,1)';
+`
 
-// const TextInput = () => {
-//   const [text, setText] = useState('')
-//   const changeHandler = (val: any) => {
-//     setText(val)
-//   }
-//   return (
-//     <TextInputStyled
-//       placeholder="Ecris ton devoir ici"
-//       onChangeText={changeHandler}
-//     />
-//   )
-// }
+const TextInput = () => {
+  return <TextInputStyled />
+}
 
-// export default TextInput
+export default TextInput
