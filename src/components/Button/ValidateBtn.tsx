@@ -1,5 +1,5 @@
 import styled from 'rn-css'
-import React, { useState } from 'react'
+import React from 'react'
 import { Text } from 'react-native'
 
 const ValidateBtnStyled = styled.TouchableOpacity`
@@ -12,10 +12,14 @@ const ValidateBtnStyled = styled.TouchableOpacity`
   pressduration: 0.3;
 `
 
-const ValidateBtn = ({ handleSubmit }) => {
+const ValidateBtn = () => {
   return (
-    <ValidateBtnStyled onPress={() => handleSubmit}>
-      <Text>Ajouter devoir</Text>
+    <ValidateBtnStyled
+      onPress={() => {
+        console.log('fr')
+      }}
+    >
+      <Text>Ajouter</Text>
     </ValidateBtnStyled>
   )
 }
