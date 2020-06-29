@@ -1,34 +1,38 @@
 import styled from 'rn-css'
 import React from 'react'
-import { Text, View } from 'react-native'
-import ColorsSubjects from '../../theme/Colors'
 
-const MatiereBtnStyle = styled.TouchableOpacity<{ color: string }>`
-  background: ${props => props.color};
+// Styled components
+const MatiereBtnStyle = styled.TouchableOpacity<{ colors: any }>`
+  background: ${props => props.colors.background};
   justify-content: center;
   text-align: center;
   align-items: center;
-  width: 100px;
-  height: 50px;
-  border: 2px solid black;
+  border-width: 2px;
+  border-color: ${props => props.colors.border};
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 10px;
+  flex: 1;
 `
 
-const MatiereBtn = () => {
+const TextBtn = styled.Text`
+  font-weight: bold;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+  line-height: 1.3em;
+`
+
+// Props type
+type Props = {
+  subject: any
+  selectSubject: any
+}
+
+const MatiereBtn = ({ subject, selectSubject }: Props) => {
   return (
-    <View>
-      {ColorsSubjects.map(sub => {
-        return (
-          <MatiereBtnStyle
-            color={sub.color}
-            onPress={() => {
-              console.log(sub.subject)
-            }}
-          >
-            <Text>{sub.subject}</Text>
-          </MatiereBtnStyle>
-        )
-      })}
-    </View>
+    <MatiereBtnStyle colors={subject.colors} onPress={selectSubject}>
+      <TextBtn>{subject.label}</TextBtn>
+    </MatiereBtnStyle>
   )
 }
 export default MatiereBtn

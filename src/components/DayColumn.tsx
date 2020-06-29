@@ -1,41 +1,40 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'rn-css'
-
-import PenBtn from './Button/PenBtn'
-
-const ColumnWrapper = styled.View<{ currentDay: boolean }>`
+import moment from 'moment'
+moment.locale('fr')
+const toMatch = moment(new Date()).format('dddd Do MMMM')
+const ColumnWrapper = styled.View<{ today: any }>`
   border-color: rgba(110, 75, 196, 1);
-  border-width: ${props => (props.currentDay ? '3px' : '1px')};
-  width: ${props => (props.currentDay ? '262px' : '227px')};
-  height: ${props => (props.currentDay ? '760px' : '707px')};
+  border-width: ${props => (props.today === toMatch ? '3px' : '1px')};
+  width: ${props => (props.today === toMatch ? '262px' : '227px')};
+  height: ${props => (props.today === toMatch ? '760px' : '707px')};
   border-radius: 3px;
   background: rgba(255, 255, 255, 1);
 `
-const DateWrapper = styled.View<{ currentDay: boolean }>`
+const DateWrapper = styled.View<{ today: any }>`
   width: 100%;
   height: 70px;
   background: ${props =>
-    props.currentDay ? 'rgba(110,75,196,1)' : 'rgba(136,114,191,1)'};
-  flex-direction: row;
+    props.today === toMatch ? 'rgba(105,228,57,1)' : 'rgba(110,75,196,1)'};
   flex-wrap: nowrap;
-  justify-content: space-around;
   align-items: center;
 `
-const DateText = styled.Text<{ currentDay: boolean }>`
+const DateText = styled.Text<{ today: any }>`
+  align-items: center;
   color: white;
   font-weight: bold;
-  font-size: ${props => (props.currentDay ? '1.5em' : '1.3em')};
+  font-size: ${props => (props.today === toMatch ? '1.5em' : '1.3em')};
 `
 
-const DayColumn = () => {
-  const [currentDay] = useState<boolean>(false)
+const DayColumn = (days: any) => {
   return (
-    <ColumnWrapper currentDay={currentDay}>
-      <DateWrapper currentDay={currentDay}>
-        <DateText currentDay={currentDay}>Mercredi 27 juillet</DateText>
-        <PenBtn />
-      </DateWrapper>
-    </ColumnWrapper>
+    <>
+      <ColumnWrapper today={days.day[0]}>
+        <DateWrapper today={days.day[0]}>
+          <DateText today={days.day[0]}>{days.day[0]}</DateText>
+        </DateWrapper>
+      </ColumnWrapper>
+    </>
   )
 }
 export default DayColumn

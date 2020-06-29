@@ -1,14 +1,15 @@
 import styled from 'rn-css'
-import React from 'react'
 
-const TextInputStyled = styled.TextInput`
-  color: rgba(0, 0, 0, 1);
-  font-size: 2em;
-  border: 2px solid 'rgba(128,0,128,1)';
+const TextInput = styled.TextInput`
+  width: 100%;
+  height: 20%;
+  font-size: 1em;
+  border: 1.5px solid black;
+  border-radius: 3px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5em;
+  font-style: italic;
+  outline: none;
 `
-
-const TextInput = () => {
-  return <TextInputStyled />
-}
-
 export default TextInput
