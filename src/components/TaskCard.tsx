@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'rn-css'
-import ColorsSubjects from '../theme/Colors'
+import { SubjectsInfo } from '../theme/Infos'
 import PenBtn from './Button/PenBtn'
 import { CheckBox, StyleSheet } from 'react-native'
 
@@ -41,7 +41,7 @@ const TaskCard = () => {
   const [isSelected, setSelection] = useState(false)
 
   return (
-    <TaskCardWrapper color = {ColorsSubjects[1].color} selected={isSelected}>
+    <TaskCardWrapper color = {SubjectsInfo[1].color.background} selected={isSelected}>
       <ViewCardRow>
         <ViewCardRow>
           <Placeholder />
