@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { View, TouchableOpacity, Text } from 'react-native'
-
 import moment from 'moment'
 import RightArrow from '../components/Button/RightArrow'
 import LeftArrow from '../components/Button/LeftArrow'
