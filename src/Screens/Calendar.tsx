@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { View, TouchableOpacity, Text } from 'react-native'
-
 import moment from 'moment'
 import RightArrow from '../components/Button/RightArrow'
 import LeftArrow from '../components/Button/LeftArrow'
 import styled from 'rn-css'
 import DayColumn from '../components/DayColumn'
+import SwitchDayWeekButton from '../components/Button/SwitchDayWeekButton'
 
 const CalendarView = styled.View`
   flex-direction: row;
@@ -169,6 +169,7 @@ const Calendar = () => {
       <TouchableOpacity onPress={returnCurrentWeek}>
         <Text>revenir à la semaine </Text>
       </TouchableOpacity>
+      <SwitchDayWeekButton/>
     </>
   )
 }
