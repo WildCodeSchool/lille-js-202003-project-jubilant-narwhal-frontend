@@ -2,7 +2,7 @@ import React from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import styled from 'rn-css'
 import moment from 'moment'
-import ColumnDayByDay from '../components/ColumnDayByDay'
+import DayColumn from '../components/DayColumn'
 
 const SwitchTextStyled = styled.Text`
   width: 100px;
@@ -32,6 +32,7 @@ const CalendarDay = () => {
   const today = new Date()
   // const [number, setNumber] = useState(0)
 
+  const Day = moment(today).format('dddd Do MMMM YYYY')
   // const todayCalendar = moment(today).format('dddd')
 
   // const printWeek = (todayCalendar: any) => {
@@ -157,16 +158,16 @@ const CalendarDay = () => {
   // const removeOneWeek = () => {
   //   setNumber(number - 7)
   // }
-  console.log('todayCalendar', moment(today).format('dddd Do MMMM YYYY'))
+
   return (
     <>
       <View>
-        <TextCalendar>{moment(today).format('dddd Do MMMM YYYY')}</TextCalendar>
+        <TextCalendar>{Day}</TextCalendar>
       </View>
 
       <CalendarView>
 
-        <ColumnDayByDay day={moment(today).format('dddd Do MMMM YYYY')} />
+        <DayColumn day={Day} />
 
       </CalendarView>
 

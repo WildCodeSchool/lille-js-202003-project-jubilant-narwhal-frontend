@@ -171,7 +171,8 @@ const Calendar = () => {
           <LeftArrow />
         </TouchableOpacity>
         {printWeek(todayCalendar).map((...day: any) => (
-          <DayColumn key={day} day={day} />
+
+          <DayColumn key={day} day={day[0]} />
         ))}
         <TouchableOpacity onPress={addOneWeek}>
           <RightArrow />
