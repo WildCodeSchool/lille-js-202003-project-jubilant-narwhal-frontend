@@ -37,7 +37,6 @@ const CalendarDay = () => {
   // const [numberToAdd, setNumberToAdd] = useState(0)
   // const [numberToRemove, setNumberToRemove] = useState(0)
   const [number, setNumber] = useState(0)
-  console.log(number)
 
   useEffect(() => {
     setDay(
@@ -49,23 +48,10 @@ const CalendarDay = () => {
 
   const addOneDay = () => {
     setNumber(number + 1)
-
-    console.log('add', number)
-    // setDay(
-    //   moment()
-    //     .add(number, 'days')
-    //     .format('dddd Do MMMM')
-    // )
   }
 
   const removeOneDay = () => {
     setNumber(number - 1)
-    console.log('remove', number)
-    // setDay(
-    //   moment()
-    //     .add(number, 'days')
-    //     .format('dddd Do MMMM')
-    // )
   }
   return (
     <>
