@@ -7,14 +7,14 @@ const PenBtnStyle = styled.Image`
   height: 1em;
   border-radius: 25%;
 `
+// Props type
+type Props = {
+  removeTask: any
+}
 
-const PenBtn = () => {
+const PenBtn = ({ removeTask }: Props) => {
   return (
-    <TouchableOpacity
-      onPress={() => {
-        console.log('edit')
-      }}
-    >
+    <TouchableOpacity onPress={() => ({ removeTask })}>
       <PenBtnStyle
         source={require('../../../assets/Images/pencil-circle.svg')}
       />

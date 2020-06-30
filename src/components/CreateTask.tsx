@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native'
+import TaskCard from './TaskCard'
 
 interface IToDo {
   text: string
@@ -17,17 +18,17 @@ export default function CreateTask () {
     setValue('')
   }
 
-  const removeItem = (index: number): void => {
+  const removeTask = (index: number): void => {
     const newToDoList = [...toDoList]
     newToDoList.splice(index, 1)
     setToDos(newToDoList)
   }
 
-  const toggleComplete = (index: number): void => {
-    const newToDoList = [...toDoList]
-    newToDoList[index].completed = !newToDoList[index].completed
-    setToDos(newToDoList)
-  }
+  // const toggleComplete = (index: number): void => {
+  //   const newToDoList = [...toDoList]
+  //   newToDoList[index].completed = !newToDoList[index].completed
+  //   setToDos(newToDoList)
+  // }
 
   return (
     <View style={styles.container}>
@@ -50,27 +51,28 @@ export default function CreateTask () {
       <Text style={styles.subtitle}>Un devoir :</Text>
       {toDoList.length === 0 && <Text>Pas de devoirs à faire.</Text>}
       {toDoList.map((toDo: IToDo, index: number) => (
-        <View style={styles.listItem} key={`${index}_${toDo.text}`}>
-          <Text
-            style={[
-              styles.task,
-              { textDecorationLine: toDo.completed ? 'line-through' : 'none' }
-            ]}
-          >
-            {toDo.text}
-          </Text>
-          <Button
-            title={toDo.completed ? 'Completed' : 'Complete'}
-            onPress={() => toggleComplete(index)}
-          />
-          <Button
-            title="X"
-            onPress={() => {
-              removeItem(index)
-            }}
-            color="crimson"
-          />
-        </View>
+        // <View style={styles.listItem} key={`${index}_${toDo.text}`}>
+        //   <Text
+        //     style={[
+        //       styles.task,
+        //       { textDecorationLine: toDo.completed ? 'line-through' : 'none' }
+        //     ]}
+        //   >
+        //     {toDo.text}
+        //   </Text>
+        //   <Button
+        //     title={toDo.completed ? 'Completed' : 'Complete'}
+        //     onPress={() => toggleComplete(index)}
+        //   />
+        //   <Button
+        //     title="X"
+        //     onPress={() => {
+        //       removeItem(index)
+        //     }}
+        //     color="crimson"
+        //   />
+        // </View>
+        <TaskCard text={toDo.text} removeTask={removeTask(index)} key={index} />
       ))}
     </View>
   )

@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'rn-css'
 
-import PenBtn from './Button/PenBtn'
-
 const DayWrapper = styled.View`
   padding: 20px;
   width: 770px;
@@ -31,7 +29,6 @@ const DayListDisplay = () => {
     <DayWrapper>
       <DateText currentDay={currentDay}>Mercredi 27</DateText>
       <Line currentDay={currentDay} />
-      <PenBtn />
     </DayWrapper>
   )
 }
