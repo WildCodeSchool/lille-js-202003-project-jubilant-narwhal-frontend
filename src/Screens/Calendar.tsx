@@ -137,7 +137,6 @@ const Calendar = () => {
     return toPrint
   }
 
-
   const returnCurrentWeek = () => {
     setNumber(0)
   }
@@ -150,28 +149,26 @@ const Calendar = () => {
     setNumber(number - 7)
   }
 
-
   return (
     <>
       <View>
         <TextCalendar>{moment(today).format('dddd Do MMMM YYYY')}</TextCalendar>
-    </View>
+      </View>
 
-    <CalendarView>
-      <TouchableOpacity onPress={removeOneWeek}>
-        <LeftArrow/>
-      </TouchableOpacity>
-      {printWeek(todayCalendar).map((...day: any) => (
+      <CalendarView>
+        <TouchableOpacity onPress={removeOneWeek}>
+          <LeftArrow />
+        </TouchableOpacity>
+        {printWeek(todayCalendar).map((...day: any) => (
           <DayColumn key={day} day={day} />
         ))}
-      <TouchableOpacity onPress={addOneWeek}>
-        <RightArrow />
+        <TouchableOpacity onPress={addOneWeek}>
+          <RightArrow />
+        </TouchableOpacity>
+      </CalendarView>
+      <TouchableOpacity onPress={returnCurrentWeek}>
+        <Text>revenir à la semaine </Text>
       </TouchableOpacity>
-    </CalendarView>
-       <TouchableOpacity onPress={removeOneWeek}>
-         <Text>revenir à la semaine </Text>
-      </TouchableOpacity>
-
     </>
   )
 }

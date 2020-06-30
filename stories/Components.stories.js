@@ -13,7 +13,7 @@ import ViewRightBtn from '../src/components/Button/ViewRightBtn'
 import SwitchViewBtn from '../src/components/Button/SwitchViewBtn'
 import TaskCard from '../src/components/TaskCard'
 import WeeksNav from '../src/components/WeeksNav'
-import DayColumn from '../src/components/DayColumn'
+
 import DayListDisplay from '../src/components/DayListDisplay'
 import MonthListDisplay from '../src/components/MonthListDisplay'
 
@@ -34,7 +34,7 @@ export const ViewRightBtnStory = () => <ViewRightBtn />
 export const PenBtnStory = () => <PenBtn />
 export const SwitchViewBtnStory = () => <SwitchViewBtn />
 export const WeeksNavStory = () => <WeeksNav />
-export const DayColumnStory = () => <DayColumn />
+
 export const DayListDisplayStory = () => <DayListDisplay />
 export const MonthListDisplayStory = () => <MonthListDisplay />
 export const CalendarStory = () => <Calendar />
