@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'rn-css'
 import { SubjectsInfo } from '../theme/Infos'
-import { TouchableOpacity } from 'react-native'
 import PenBtn from './Button/PenBtn'
 
 const TaskCardWrapper = styled.View<{ color: string; selected: boolean }>`
@@ -32,11 +31,6 @@ const TaskCardText = styled.Text<{ selected: boolean }>`
   color: white;
   font-size: 2em;
   text-decoration-line: ${props => (props.selected ? 'line-through' : 'none')};
-`
-const PenBtnStyle = styled.Image`
-  width: 1em;
-  height: 1em;
-  border-radius: 25%;
 `
 
 const TaskBtn = styled.TouchableOpacity<{ selected: boolean }>`
