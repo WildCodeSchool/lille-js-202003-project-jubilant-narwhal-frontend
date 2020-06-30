@@ -34,23 +34,26 @@ const CalendarDay = () => {
   const today = new Date()
   const oneDay = moment(today).format('dddd Do MMMM ')
   const [day, setDay] = useState(moment(today).format('dddd Do MMMM'))
-  const [numberToAdd, setNumberToAdd] = useState(0)
-  const [numberToRemove, setNumberToRemove] = useState(0)
+  // const [numberToAdd, setNumberToAdd] = useState(0)
+  // const [numberToRemove, setNumberToRemove] = useState(0)
+  const [number, setNumber] = useState(1)
 
   const addOneDay = () => {
-    setNumberToAdd(numberToAdd + 1)
+    setNumber(number + 1)
+    console.log(number)
     setDay(
       moment()
-        .add(numberToAdd - numberToRemove, 'days')
+        .add(number, 'days')
         .format('dddd Do MMMM')
     )
   }
 
   const removeOneDay = () => {
-    setNumberToRemove(numberToRemove + 1)
+    setNumber(number - 1)
+    console.log(number)
     setDay(
       moment()
-        .subtract(numberToRemove - numberToAdd, 'days')
+        .add(number, 'days')
         .format('dddd Do MMMM')
     )
   }
