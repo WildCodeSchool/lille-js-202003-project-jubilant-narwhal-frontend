@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'rn-css'
 import { SubjectsInfo } from '../theme/Infos'
-// import PenBtn from './Button/PenBtn'
 import { TouchableOpacity } from 'react-native'
+import PenBtn from './Button/PenBtn'
 
 const TaskCardWrapper = styled.View<{ color: string; selected: boolean }>`
   padding: 20px;
@@ -67,11 +67,7 @@ const TaskCard = ({ text, removeTask, isCompleted, completeTask }: Props) => {
           <Placeholder />
           <TaskCardSubject>Matière</TaskCardSubject>
         </ViewCardRow>
-        <TouchableOpacity onPress={removeTask}>
-          <PenBtnStyle
-            source={require('../../assets/Images/pencil-circle.svg')}
-          />
-        </TouchableOpacity>
+        <PenBtn removeTask={removeTask} />
       </ViewCardRow>
       <ViewCardRow>
         <TaskCardText selected={isCompleted}>{text}</TaskCardText>
