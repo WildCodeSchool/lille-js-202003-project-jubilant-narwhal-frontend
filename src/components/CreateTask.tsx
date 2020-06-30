@@ -7,7 +7,7 @@ interface IToDo {
   completed: boolean
 }
 
-export default function CreateTask () {
+const CreateTask = () => {
   const [value, setValue] = useState<string>('')
   const [toDoList, setToDos] = useState<IToDo[]>([])
   const [error, showError] = useState<boolean>(false)
@@ -49,31 +49,38 @@ export default function CreateTask () {
         <Text style={styles.error}>Error: Input field is empty...</Text>
       )}
       <Text style={styles.subtitle}>Un devoir :</Text>
-      {toDoList.length === 0 && <Text>Pas de devoirs à faire.</Text>}
-      {toDoList.map((toDo: IToDo, index: number) => (
-        // <View style={styles.listItem} key={`${index}_${toDo.text}`}>
-        //   <Text
-        //     style={[
-        //       styles.task,
-        //       { textDecorationLine: toDo.completed ? 'line-through' : 'none' }
-        //     ]}
-        //   >
-        //     {toDo.text}
-        //   </Text>
-        //   <Button
-        //     title={toDo.completed ? 'Completed' : 'Complete'}
-        //     onPress={() => toggleComplete(index)}
-        //   />
-        //   <Button
-        //     title="X"
-        //     onPress={() => {
-        //       removeItem(index)
-        //     }}
-        //     color="crimson"
-        //   />
-        // </View>
-        <TaskCard text={toDo.text} removeTask={removeTask(index)} key={index} />
-      ))}
+      {toDoList.length === 0 ? (
+        <Text>Pas de devoirs à faire.</Text>
+      ) : (
+        toDoList.map((toDo: IToDo, index: number) => (
+          // <View style={styles.listItem} key={`${index}_${toDo.text}`}>
+          //   <Text
+          //     style={[
+          //       styles.task,
+          //       { textDecorationLine: toDo.completed ? 'line-through' : 'none' }
+          //     ]}
+          //   >
+          //     {toDo.text}
+          //   </Text>
+          //   <Button
+          //     title={toDo.completed ? 'Completed' : 'Complete'}
+          //     onPress={() => toggleComplete(index)}
+          //   />
+          //   <Button
+          //     title="X"
+          //     onPress={() => {
+          //       removeTask(index)
+          //     }}
+          //     color="crimson"
+          //   />
+          // </View>
+          <TaskCard
+            text={toDo.text}
+            removeTask={() => removeTask(index)}
+            key={index}
+          />
+        ))
+      )}
     </View>
   )
 }
@@ -124,3 +131,5 @@ const styles = StyleSheet.create({
     color: 'red'
   }
 })
+
+export default CreateTask

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'rn-css'
 import { SubjectsInfo } from '../theme/Infos'
-import PenBtn from './Button/PenBtn'
-import { CheckBox, StyleSheet } from 'react-native'
+// import PenBtn from './Button/PenBtn'
+import { CheckBox, StyleSheet, TouchableOpacity } from 'react-native'
 
 const TaskCardWrapper = styled.View<{ color: string; selected: boolean }>`
   padding: 20px;
@@ -23,10 +23,20 @@ const Placeholder = styled.View`
   height: 30px;
   background: gray;
 `
-
-const TaskCardText = styled.Text`
+const TaskCardSubject = styled.Text`
   color: white;
   font-size: 2em;
+`
+
+const TaskCardText = styled.Text<{ selected: boolean }>`
+  color: white;
+  font-size: 2em;
+  text-decoration-line: ${props => (props.selected ? 'line-through' : 'none')};
+`
+const PenBtnStyle = styled.Image`
+  width: 1em;
+  height: 1em;
+  border-radius: 25%;
 `
 
 const styles = StyleSheet.create({
@@ -54,12 +64,16 @@ const TaskCard = ({ text, removeTask }: Props) => {
       <ViewCardRow>
         <ViewCardRow>
           <Placeholder />
-          <TaskCardText>Matière</TaskCardText>
+          <TaskCardSubject>Matière</TaskCardSubject>
         </ViewCardRow>
-        <PenBtn removeTask={removeTask} />
+        <TouchableOpacity onPress={removeTask}>
+          <PenBtnStyle
+            source={require('../../assets/Images/pencil-circle.svg')}
+          />
+        </TouchableOpacity>
       </ViewCardRow>
       <ViewCardRow>
-        <TaskCardText>{text}</TaskCardText>
+        <TaskCardText selected={isSelected}>{text}</TaskCardText>
         <CheckBox
           value={isSelected}
           onValueChange={setSelection}
