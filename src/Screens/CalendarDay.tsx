@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import styled from 'rn-css'
 import moment from 'moment'
@@ -36,26 +36,36 @@ const CalendarDay = () => {
   const [day, setDay] = useState(moment(today).format('dddd Do MMMM'))
   // const [numberToAdd, setNumberToAdd] = useState(0)
   // const [numberToRemove, setNumberToRemove] = useState(0)
-  const [number, setNumber] = useState(1)
+  const [number, setNumber] = useState(0)
+  console.log(number)
 
-  const addOneDay = () => {
-    setNumber(number + 1)
-    console.log(number)
+  useEffect(() => {
     setDay(
       moment()
         .add(number, 'days')
         .format('dddd Do MMMM')
     )
+  }, [number])
+
+  const addOneDay = () => {
+    setNumber(number + 1)
+
+    console.log('add', number)
+    // setDay(
+    //   moment()
+    //     .add(number, 'days')
+    //     .format('dddd Do MMMM')
+    // )
   }
 
   const removeOneDay = () => {
     setNumber(number - 1)
-    console.log(number)
-    setDay(
-      moment()
-        .add(number, 'days')
-        .format('dddd Do MMMM')
-    )
+    console.log('remove', number)
+    // setDay(
+    //   moment()
+    //     .add(number, 'days')
+    //     .format('dddd Do MMMM')
+    // )
   }
   return (
     <>
