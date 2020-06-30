@@ -1,5 +1,5 @@
 import React from 'react'
-import AddTaskScreen from '../src/screens/AddTaskScreen'
+import AddTaskScreen from '../src/Screens/AddTaskScreen'
 
 export default {
   title: 'Screens'

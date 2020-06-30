@@ -16,6 +16,7 @@ import WeeksNav from '../src/components/WeeksNav'
 
 import DayListDisplay from '../src/components/DayListDisplay'
 import MonthListDisplay from '../src/components/MonthListDisplay'
+import CalendarDay from '../src/Screens/CalendarDay'
 
 export default {
   title: 'Components'
@@ -38,3 +39,4 @@ export const WeeksNavStory = () => <WeeksNav />
 export const DayListDisplayStory = () => <DayListDisplay />
 export const MonthListDisplayStory = () => <MonthListDisplay />
 export const CalendarStory = () => <Calendar />
+export const CalendarDayStory = () => <CalendarDay/>
