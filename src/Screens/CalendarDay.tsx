@@ -34,8 +34,6 @@ const CalendarDay = () => {
   const today = new Date()
   const oneDay = moment(today).format('dddd Do MMMM ')
   const [day, setDay] = useState(moment(today).format('dddd Do MMMM'))
-  // const [numberToAdd, setNumberToAdd] = useState(0)
-  // const [numberToRemove, setNumberToRemove] = useState(0)
   const [number, setNumber] = useState(0)
 
   useEffect(() => {
