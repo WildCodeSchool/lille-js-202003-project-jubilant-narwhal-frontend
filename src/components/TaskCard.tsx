@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'rn-css'
 import { SubjectsInfo } from '../theme/Infos'
 // import PenBtn from './Button/PenBtn'
-import { CheckBox, StyleSheet, TouchableOpacity } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 
 const TaskCardWrapper = styled.View<{ color: string; selected: boolean }>`
   padding: 20px;
@@ -39,27 +39,28 @@ const PenBtnStyle = styled.Image`
   border-radius: 25%;
 `
 
-const styles = StyleSheet.create({
-  checkbox: {
-    alignSelf: 'center',
-    width: 30,
-    height: 30
-  }
-})
+const TaskBtn = styled.TouchableOpacity<{ selected: boolean }>`
+  background: ${props => (props.selected ? 'white' : 'green')};
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+`
 
 // Props type
 type Props = {
   text: string
   removeTask: any
+  isCompleted: boolean
+  completeTask: any
 }
 
-const TaskCard = ({ text, removeTask }: Props) => {
-  const [isSelected, setSelection] = useState(false)
-
+const TaskCard = ({ text, removeTask, isCompleted, completeTask }: Props) => {
   return (
     <TaskCardWrapper
       color={SubjectsInfo[1].colors.background}
-      selected={isSelected}
+      selected={isCompleted}
     >
       <ViewCardRow>
         <ViewCardRow>
@@ -73,12 +74,10 @@ const TaskCard = ({ text, removeTask }: Props) => {
         </TouchableOpacity>
       </ViewCardRow>
       <ViewCardRow>
-        <TaskCardText selected={isSelected}>{text}</TaskCardText>
-        <CheckBox
-          value={isSelected}
-          onValueChange={setSelection}
-          style={styles.checkbox}
-        />
+        <TaskCardText selected={isCompleted}>{text}</TaskCardText>
+        <TaskBtn selected={isCompleted} onPress={completeTask}>
+          v
+        </TaskBtn>
       </ViewCardRow>
     </TaskCardWrapper>
   )

@@ -1,7 +1,28 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native'
+import { Text, Button } from 'react-native'
+import styled from 'rn-css'
 import TaskCard from './TaskCard'
 
+const ViewContainer = styled.View`
+  padding: 35;
+  align-items: center;
+`
+
+const InputWrapper = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20;
+`
+const InputBox = styled.TextInput`
+  width: 200;
+  border-color: purple;
+  border-radius: 8;
+  border-width: 2;
+  padding-left: 8;
+`
+
+// Type of to do object
 interface IToDo {
   text: string
   completed: boolean
@@ -12,7 +33,7 @@ const CreateTask = () => {
   const [toDoList, setToDos] = useState<IToDo[]>([])
   const [error, showError] = useState<boolean>(false)
 
-  const handleSubmit = (): void => {
+  const addTask = (): void => {
     if (value.trim()) setToDos([...toDoList, { text: value, completed: false }])
     else showError(true)
     setValue('')
@@ -24,112 +45,43 @@ const CreateTask = () => {
     setToDos(newToDoList)
   }
 
-  // const toggleComplete = (index: number): void => {
-  //   const newToDoList = [...toDoList]
-  //   newToDoList[index].completed = !newToDoList[index].completed
-  //   setToDos(newToDoList)
-  // }
+  const completeTask = (index: number): void => {
+    const newToDoList = [...toDoList]
+    newToDoList[index].completed = !newToDoList[index].completed
+    setToDos(newToDoList)
+  }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Je veux ajouter :</Text>
-      <View style={styles.inputWrapper}>
-        <TextInput
+    <ViewContainer>
+      <Text>Je veux ajouter :</Text>
+      <InputWrapper>
+        <InputBox
           placeholder="Entrez vos devoirs à faire."
           value={value}
           onChangeText={e => {
             setValue(e)
             showError(false)
           }}
-          style={styles.inputBox}
         />
-        <Button title="Ajouter un devoir" onPress={handleSubmit} />
-      </View>
-      {error && (
-        <Text style={styles.error}>Error: Input field is empty...</Text>
-      )}
-      <Text style={styles.subtitle}>Un devoir :</Text>
+        <Button title="Ajouter un devoir" onPress={addTask} />
+      </InputWrapper>
+      {error && <Text>Error: Input field is empty...</Text>}
+      <Text>Un devoir :</Text>
       {toDoList.length === 0 ? (
         <Text>Pas de devoirs à faire.</Text>
       ) : (
         toDoList.map((toDo: IToDo, index: number) => (
-          // <View style={styles.listItem} key={`${index}_${toDo.text}`}>
-          //   <Text
-          //     style={[
-          //       styles.task,
-          //       { textDecorationLine: toDo.completed ? 'line-through' : 'none' }
-          //     ]}
-          //   >
-          //     {toDo.text}
-          //   </Text>
-          //   <Button
-          //     title={toDo.completed ? 'Completed' : 'Complete'}
-          //     onPress={() => toggleComplete(index)}
-          //   />
-          //   <Button
-          //     title="X"
-          //     onPress={() => {
-          //       removeTask(index)
-          //     }}
-          //     color="crimson"
-          //   />
-          // </View>
           <TaskCard
             text={toDo.text}
             removeTask={() => removeTask(index)}
             key={index}
+            isCompleted={toDo.completed}
+            completeTask={() => completeTask(index)}
           />
         ))
       )}
-    </View>
+    </ViewContainer>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 35,
-    alignItems: 'center'
-  },
-  inputWrapper: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 20
-  },
-  inputBox: {
-    width: 200,
-    borderColor: 'purple',
-    borderRadius: 8,
-    borderWidth: 2,
-    paddingLeft: 8
-  },
-  title: {
-    fontSize: 40,
-    marginBottom: 40,
-    fontWeight: 'bold',
-    textDecorationLine: 'underline'
-  },
-  subtitle: {
-    fontSize: 20,
-    marginBottom: 20,
-    color: 'purple'
-  },
-  listItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '100%',
-    marginBottom: 10
-  },
-  addButton: {
-    alignItems: 'flex-end'
-  },
-  task: {
-    width: 200
-  },
-  error: {
-    color: 'red'
-  }
-})
 
 export default CreateTask
