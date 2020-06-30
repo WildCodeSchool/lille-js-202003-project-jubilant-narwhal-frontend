@@ -37,6 +37,12 @@ const styles = StyleSheet.create({
   }
 })
 
+// Props type
+// type Props = {
+//   tex: any
+//   addTask: any
+// }
+
 const TaskCard = () => {
   const [isSelected, setSelection] = useState(false)
 
@@ -53,7 +59,7 @@ const TaskCard = () => {
         <PenBtn />
       </ViewCardRow>
       <ViewCardRow>
-        <TaskCardText>Devoir à faire</TaskCardText>
+        <TaskCardText />
         <CheckBox
           value={isSelected}
           onValueChange={setSelection}

@@ -1,25 +1,3 @@
-// import React, { useState } from 'react'
-// import { View } from 'react-native'
-// import TextInput from './Text/TextInput'
-// import ValidateBtn from './Button/ValidateBtn'
-
-// function CreateTask() {
-//   const [tasks, setTasks] = useState([{ text: 'DM de Math', key: '1' }])
-
-//   const submitHandler = (text: string) => {
-//     setTasks(prevTasks => {
-//       return [{ text: text, key: Math.random().toString() }, ...prevTasks]
-//     })
-//   }
-
-//   return (
-//     <View>
-//       <TextInput />
-//       <ValidateBtn submitHandler={submitHandler} />
-//     </View>
-//   )
-// }
-// export default CreateTask
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native'
 
@@ -53,7 +31,7 @@ export default function CreateTask () {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Devoirs à faire</Text>
+      <Text style={styles.title}>Je veux ajouter :</Text>
       <View style={styles.inputWrapper}>
         <TextInput
           placeholder="Entrez vos devoirs à faire."
@@ -64,13 +42,13 @@ export default function CreateTask () {
           }}
           style={styles.inputBox}
         />
-        <Button title="Add Task" onPress={handleSubmit} />
+        <Button title="Ajouter un devoir" onPress={handleSubmit} />
       </View>
       {error && (
         <Text style={styles.error}>Error: Input field is empty...</Text>
       )}
-      <Text style={styles.subtitle}>Your Tasks :</Text>
-      {toDoList.length === 0 && <Text>No to do task available</Text>}
+      <Text style={styles.subtitle}>Un devoir :</Text>
+      {toDoList.length === 0 && <Text>Pas de devoirs à faire.</Text>}
       {toDoList.map((toDo: IToDo, index: number) => (
         <View style={styles.listItem} key={`${index}_${toDo.text}`}>
           <Text
