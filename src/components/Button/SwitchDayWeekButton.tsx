@@ -1,23 +1,18 @@
-import React, { useState } from 'react'
-import { TouchableOpacity } from 'react-native'
-import styled from 'rn-css'
+// import React from 'react'
+// import { TouchableOpacity } from 'react-native'
+// import styled from 'rn-css'
 
-const SwitchTextStyled = styled.Text`
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-`
+// const SwitchTextStyled = styled.Text`
+//   width: 100px;
+//   height: 100px;
+//   display: inline-block;
+// `
 
-const SwitchDayWeekButton = () => {
-  const [viewDayWeek, setViewDayWeek] = useState<boolean>(false)
-
-  const changeViewButton = () => {
-    setViewDayWeek(!viewDayWeek)
-  }
-  return (
-    <TouchableOpacity onPress={changeViewButton}>
-      <SwitchTextStyled>{viewDayWeek ? 'semaine' : 'jour'} </SwitchTextStyled>
-    </TouchableOpacity>
-  )
-}
-export default SwitchDayWeekButton
+// const SwitchDayWeekButton = ({ navigation }) => {
+//   return (
+//     <TouchableOpacity onPress={() => navigation.navigate('CalendarDay')}>
+//       <SwitchTextStyled>Semaine </SwitchTextStyled>
+//     </TouchableOpacity>
+//   )
+// }
+// export default SwitchDayWeekButton
