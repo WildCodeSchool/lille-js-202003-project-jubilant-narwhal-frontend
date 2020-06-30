@@ -8,13 +8,9 @@ const PenBtnStyle = styled.Image`
   border-radius: 25%;
 `
 
-const PenBtn = () => {
+const PenBtn = ({ removeTask }: any) => {
   return (
-    <TouchableOpacity
-      onPress={() => {
-        console.log('edit')
-      }}
-    >
+    <TouchableOpacity onPress={removeTask}>
       <PenBtnStyle
         source={require('../../../assets/Images/pencil-circle.svg')}
       />

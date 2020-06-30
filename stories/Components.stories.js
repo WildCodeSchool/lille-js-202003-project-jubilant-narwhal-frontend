@@ -1,5 +1,5 @@
 import React from 'react'
-import Calendar from '../src/Screens/Calendar'
+import Calendar from '../src/screens/Calendar'
 import LeftArrow from '../src/components/Button/LeftArrow'
 import RightArrow from '../src/components/Button/RightArrow'
 import MatiereBtn from '../src/components/Button/MatiereBtn'
@@ -16,6 +16,8 @@ import WeeksNav from '../src/components/WeeksNav'
 import DayColumn from '../src/components/DayColumn'
 import DayListDisplay from '../src/components/DayListDisplay'
 import MonthListDisplay from '../src/components/MonthListDisplay'
+import TextInput from '../src/components/Text/TextInput'
+import CreateTask from '../src/components/CreateTask'
 
 export default {
   title: 'Components'
@@ -37,4 +39,7 @@ export const WeeksNavStory = () => <WeeksNav />
 export const DayColumnStory = () => <DayColumn />
 export const DayListDisplayStory = () => <DayListDisplay />
 export const MonthListDisplayStory = () => <MonthListDisplay />
+export const AddNewHomeworkStory = () => <AddNewHomework />
 export const CalendarStory = () => <Calendar />
+export const TextInputStory = () => <TextInput />
+export const CreateTaskStory = () => <CreateTask />
