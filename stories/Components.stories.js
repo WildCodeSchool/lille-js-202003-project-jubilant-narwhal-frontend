@@ -1,5 +1,5 @@
 import React from 'react'
-import Calendar from '../src/Screens/Calendar'
+import Calendar from '../src/screens/Calendar'
 import LeftArrow from '../src/components/Button/LeftArrow'
 import RightArrow from '../src/components/Button/RightArrow'
 import MatiereBtn from '../src/components/Button/MatiereBtn'
@@ -16,7 +16,7 @@ import WeeksNav from '../src/components/WeeksNav'
 
 import DayListDisplay from '../src/components/DayListDisplay'
 import MonthListDisplay from '../src/components/MonthListDisplay'
-import CalendarDay from '../src/Screens/CalendarDay'
+import CalendarDay from '../src/screens/CalendarDay'
 
 export default {
   title: 'Components'
