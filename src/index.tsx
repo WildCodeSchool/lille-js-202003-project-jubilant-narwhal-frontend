@@ -13,10 +13,10 @@ const App = () => {
   return (
     <View>
       <TouchableOpacity onPress={() => setActive('calendar')}>
-        <Text>Calendar</Text>
+        <Text>Calendrier</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => setActive('day')}>
-        <Text>AddTask</Text>
+        <Text>Jour par Jour</Text>
       </TouchableOpacity>
       <Navigation active={active}>
         <PropsView name="calendar">
