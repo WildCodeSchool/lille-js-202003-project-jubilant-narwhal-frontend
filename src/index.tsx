@@ -1,22 +1,32 @@
-import 'react-native-gesture-handler'
-import * as React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-import Calendar from './Screens/Calendar'
+import React, { useState } from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
+import Navigation from 'react-unavigation'
+import styled from 'rn-css'
+import Calendar from './screens/Calendar'
 
-import CalendarDay from './Screens/CalendarDay'
-
-const Stack = createStackNavigator()
-
+import CalendarDay from './screens/CalendarDay'
+const PropsView = styled.View<{ name: string }>`
+  background-color: lightblue;
+`
 const App = () => {
+  const [active, setActive] = useState<string>('home')
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Calendar" component={Calendar} />
-        <Stack.Screen name="CalendarDay" component={CalendarDay} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View>
+      <TouchableOpacity onPress={() => setActive('calendar')}>
+        <Text>Calendar</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => setActive('day')}>
+        <Text>AddTask</Text>
+      </TouchableOpacity>
+      <Navigation active={active}>
+        <PropsView name="calendar">
+          <Calendar />
+        </PropsView>
+        <PropsView name="day">
+          <CalendarDay />
+        </PropsView>
+      </Navigation>
+    </View>
   )
 }
-
 export default App
