@@ -6,11 +6,6 @@ import LeftArrow from '../components/Button/LeftArrow'
 import styled from 'rn-css'
 import DayColumn from '../components/DayColumn'
 
-const SwitchTextStyled = styled.Text`
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-`
 const CalendarView = styled.View`
   flex-direction: row;
   justify-content: space-around;
@@ -20,13 +15,7 @@ const TextCalendar = styled.Text`
   font-size: 3em;
   text-align: center;
 `
-const SwitchDayWeekButton = (navigation: any) => {
-  return (
-    <TouchableOpacity onPress={() => navigation.navigate('CalendarDay')}>
-      <SwitchTextStyled>Semaine </SwitchTextStyled>
-    </TouchableOpacity>
-  )
-}
+
 moment.locale('fr')
 
 const Calendar = () => {
@@ -182,7 +171,6 @@ const Calendar = () => {
         <Text>revenir à la semaine </Text>
       </TouchableOpacity>
 
-      <SwitchDayWeekButton />
     </>
   )
 }
