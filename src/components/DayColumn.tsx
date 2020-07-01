@@ -29,9 +29,9 @@ const DateText = styled.Text<{ today: any }>`
 const DayColumn = (days: any) => {
   return (
     <>
-      <ColumnWrapper today={days.day[0]}>
-        <DateWrapper today={days.day[0]}>
-          <DateText today={days.day[0]}>{days.day[0]}</DateText>
+      <ColumnWrapper today={days.day}>
+        <DateWrapper today={days.day}>
+          <DateText today={days.day}>{days.day}</DateText>
         </DateWrapper>
       </ColumnWrapper>
     </>

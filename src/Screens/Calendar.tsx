@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { View, TouchableOpacity, Text } from 'react-native'
-
 import moment from 'moment'
 import RightArrow from '../components/Button/RightArrow'
 import LeftArrow from '../components/Button/LeftArrow'
@@ -16,6 +15,7 @@ const TextCalendar = styled.Text`
   font-size: 3em;
   text-align: center;
 `
+
 moment.locale('fr')
 
 const Calendar = () => {
@@ -137,7 +137,6 @@ const Calendar = () => {
     return toPrint
   }
 
-
   const returnCurrentWeek = () => {
     setNumber(0)
   }
@@ -150,26 +149,26 @@ const Calendar = () => {
     setNumber(number - 7)
   }
 
-
   return (
     <>
       <View>
         <TextCalendar>{moment(today).format('dddd Do MMMM YYYY')}</TextCalendar>
-    </View>
+      </View>
 
-    <CalendarView>
-      <TouchableOpacity onPress={removeOneWeek}>
-        <LeftArrow/>
-      </TouchableOpacity>
-      {printWeek(todayCalendar).map((...day: any) => (
-          <DayColumn key={day} day={day} />
+      <CalendarView>
+        <TouchableOpacity onPress={removeOneWeek}>
+          <LeftArrow />
+        </TouchableOpacity>
+        {printWeek(todayCalendar).map((...day: any) => (
+
+          <DayColumn key={day} day={day[0]} />
         ))}
-      <TouchableOpacity onPress={addOneWeek}>
-        <RightArrow />
-      </TouchableOpacity>
-    </CalendarView>
-       <TouchableOpacity onPress={removeOneWeek}>
-         <Text>revenir à la semaine </Text>
+        <TouchableOpacity onPress={addOneWeek}>
+          <RightArrow />
+        </TouchableOpacity>
+      </CalendarView>
+      <TouchableOpacity onPress={returnCurrentWeek}>
+        <Text>revenir à la semaine </Text>
       </TouchableOpacity>
 
     </>
